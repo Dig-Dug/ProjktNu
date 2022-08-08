@@ -1,1 +1,4 @@
 npm run dev
+
+git remote add origin https://github.com/Dig-Dug/ProjktNu.git
+git push --set-upstream origin master
