@@ -3,7 +3,7 @@
 </script>
 
 <script>
-	import ChangeColor from "$lib/prjkt/changeColor.svelte";
+	
 	//import Counter from '$lib/Counter.svelte';
 </script>
 
@@ -25,7 +25,7 @@
 	-->
 </h1>
 <!-- <Counter /> -->
-<ChangeColor />
+<a  href="/changeColor">changeColor</a>
 
 </section>
 
@@ -42,19 +42,19 @@
 		width: 100%;
 	}
 
-	.welcome {
+/* 	.welcome {
 		display: block;
 		position: relative;
 		width: 100%;
 		height: 0;
 		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
+	} */
 
-	.welcome img {
+	/* .welcome img {
 		position: absolute;
 		width: 100%;
 		height: 100%;
 		top: 0;
 		display: block;
-	}
+	} */
 </style>

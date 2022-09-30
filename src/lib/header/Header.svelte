@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from './svelte-logo.svg';
+	import logo from './jk.png';
 </script>
 
 <header>
@@ -35,6 +35,7 @@
 		<!-- TODO put something else here? github link? -->
 	</div>
 </header>
+
 
 <style>
 	header {
