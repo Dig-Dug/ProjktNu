@@ -25,22 +25,36 @@
 	-->
 </h1>
 <!-- <Counter /> -->
-<a  href="/changeColor">changeColor</a>
+<div class="parent">
+<div>	<a  href="/changeColor">changeColor</a> </div>
+<div>	<a  href="/changeColor"></a> </div>
+<div>	<a  href="/changeColor"></a> </div>
+<div>	<a  href="/changeColor"></a> </div>
+<div>	<a  href="/changeColor"></a> </div>
 
+</div>
 </section>
 
 <style>
-	section {
+.parent {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-column-gap: 42px;
+	grid-row-gap: 17px;
+}
+
+section {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		flex: 1;
-	}
+}
 
-	h1 {
+h1 {
 		width: 100%;
-	}
+}
 
 /* 	.welcome {
 		display: block;
