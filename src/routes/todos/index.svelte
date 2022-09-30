@@ -23,7 +23,7 @@
 </svelte:head>
 
 <div class="todos">
-	<h1>Todos</h1>
+	<h1>Toduos</h1>
 
 	<form
 		class="new"
