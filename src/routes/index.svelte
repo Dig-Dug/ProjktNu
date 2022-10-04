@@ -27,7 +27,7 @@
 <!-- <Counter /> -->
 <div class="parent">
 <div>	<a  href="/changeColor">changeColor</a> </div>
-<div>	<a  href="/changeColor"></a> </div>
+<div>	<a  href="/gradientPicker">gradientPicker</a> </div>
 <div>	<a  href="/changeColor"></a> </div>
 <div>	<a  href="/changeColor"></a> </div>
 <div>	<a  href="/changeColor"></a> </div>

@@ -1,64 +1,58 @@
 <script>
-let r = 0, g = 0, b = 0;
-let color = Math.random();
-for(let i = 0; i < 10; i++){
-   
-}
 
-let a = "10";
-let m = {x: changeColor}
 function changeColor ()  {
-      console.log("ji")
-      
+	let i =   Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+	let ii =   Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+	let iii =   Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+	
+	let rgb = "rgb";
+
+	/* let r = document.body.style.color = i * i;
+	let g = document.body.style.color = i / i;
+	let b = document.body.style.color = i;
+	 */
+
+	//document.body.style.backgroundColor = rgb + "(" +(r+ " " + g + " "+ b )+ ")";
+	let l  = rgb + "(" +(i   + " " + ii  + " "+ iii  )+ ")";
+	document.body.style.backgroundColor = l;
 }
-function huhu (event){
-  m.x = event.clientX;
 
-}
- 
-
-
-</script>
-
-
-<p>
-   {m.x}
-</p>
-<label>
-<!-- 	<input type=number value={a} min=0 max=10> -->
-<!-- 	<input type=range value={a} min=0 max=10> -->
-   <input type=range  on:change={changeColor} on:mousemove={huhu}>
-  
-</label>
-
-<button on:click={changeColor}>Change Background Color</button>
-<a  href="/">back</a>
-
-
-<body class="be"style="background-color:{color}"/>
-
-
-
-<style>
-
-
-
-
-button{
-   background-color: blanchedalmond;
-      width: 112px;
-   position: relative; 
-   top: 40px;
-   left:390px;
-}
- a{position: relative;
-      background-color: blueviolet;
-      width: 40px; top:100px;
-     height: 23px;
-
-}
-label{
-   position: relative;top: 200px;left:300px;
-}
-</style>
-
+	 function back(){
+		document.body.style.backgroundColor = "white";
+	 }
+	
+	
+	</script>
+	
+	
+	
+	
+	
+	<button on:click={changeColor}>Change Background Color</button>
+	<a  href="/" on:click={back}>back</a>
+	
+	
+	
+	
+	<style>
+	
+	
+	
+	
+	button{
+	   background-color: rgb(255, 254, 251);
+		  width: 112px;border-radius: 4px;
+	   position: relative; 
+	   top: 40px;
+	   left:390px;
+	}
+	 a{position: relative;
+		border-radius: 4px;  width: 36px; top:100px;
+	background-color: rgba(220, 20, 60, 0.486);
+		 height: 23px;
+	
+	}
+	label{
+	   position: relative;top: 200px;left:300px;
+	}
+	</style>

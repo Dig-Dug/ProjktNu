@@ -69,6 +69,7 @@ p {font-family: 'Rokkitt', serif;
 a { font-family: 'Rokkitt', serif;
 	color: var(--accent-color);
 	text-decoration: none;
+	
 }
 
 a:hover {
