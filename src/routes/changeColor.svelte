@@ -46,6 +46,10 @@ function changeColor ()  {
 	   top: 40px;
 	   left:390px;
 	}
+	button:hover{
+background-color: black;
+color: aliceblue;
+	}
 	 a{position: relative;
 		border-radius: 4px;  width: 36px; top:100px;
 	background-color: rgba(220, 20, 60, 0.486);
