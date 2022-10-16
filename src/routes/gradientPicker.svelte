@@ -1,22 +1,28 @@
 <script>
 let i = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
 let alpha = Math.floor(Math.random() * (100 - 0 + 1)) + 0;
-let rgb = "rgba";
-let r,g,b,a;
+let rgb = "rgb";
+
 
 let lg = "linear-gradient(";
       let deg = "deg"
-    r  = i+1;
-      g =  i;
-     b =  i;
-      a =  alpha;
-
+let  r  = i+1;
+ let     g =  i;
+  let   b =  i;
+  let    a =  alpha;
+let z = ""; 
 function getGradient(){
    console.log("wwww")
 
-   document.body.style.backgroundColor = lg + 360 + deg + ", " + "rgb(" + r + " " + g + " " + b + ")" + "," + "#" + r + ")";
-}
+  z =  document.body.style.background = lg + "180deg, " +  rgb + "(" + r++ + ", " + g++ + " ," + b + ")" + "," + "#" + r++ + ")";
+//style="background: linear-gradient(360deg, rgb(226, 225, 225), rgb(34, 34, 102));"
+//return z;
+//r*= i;
 
+}
+function back(){
+		document.body.style.background = "white";
+	 }
 /* const changeGradient = () => {
       let i = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
       let alpha = Math.floor(Math.random() * (100 - 0 + 1)) + 0;
@@ -58,17 +64,19 @@ function getGradient(){
       }
       }
  */
+
 </script>
 
 
 	<h1>Gradient Picker</h1>
 
-	<button on:click={getGradient}>Generate Gradient</button>
+	<button   on:click={getGradient} on:mouseover={getGradient} on:focus={getGradient}>Generate Gradient</button>
 
-<p>{i}</p>
+<p>{z}</p>
+<!-- <p>{rgb + "(" + r + " " + g + " " + b   + ")"}</p> -->
 
 
-<a  href="/">back</a>
+<a  href="/" on:click={back}>back</a>
 
 
 
@@ -78,7 +86,7 @@ button{
 		  width: 112px;border-radius: 4px;
 	   position: relative; 
 	   top: 40px;
-	   left:390px;
+	   margin: auto;
 	}
 	button:hover{
 background-color: black;
@@ -86,5 +94,9 @@ color: aliceblue;
 	}
    a{ border-radius: 4px;  width: 36px; top:100px;
 	background-color: rgba(220, 20, 60, 0.486);    
+   }
+   p{
+      font-size: 34px;
+      margin: auto;padding: 67px;
    }
 </style>

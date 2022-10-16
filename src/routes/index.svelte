@@ -28,7 +28,7 @@
 <div class="parent">
 <div>	<a  href="/changeColor">changeColor</a> </div>
 <div>	<a  href="/gradientPicker">gradientPicker</a> </div>
-<div>	<a  href="/changeColor"></a> </div>
+<div>	<a  href="/randomQuote">Random quote generator</a> </div>
 <div>	<a  href="/changeColor"></a> </div>
 <div>	<a  href="/changeColor"></a> </div>
 
@@ -43,7 +43,9 @@
 	grid-column-gap: 42px;
 	grid-row-gap: 17px;
 }
-
+a:hover{
+	color: orange;
+}
 section {
 		display: flex;
 		flex-direction: column;
