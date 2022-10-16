@@ -7,12 +7,7 @@ function changeColor ()  {
 	
 	let rgb = "rgb";
 
-	/* let r = document.body.style.color = i * i;
-	let g = document.body.style.color = i / i;
-	let b = document.body.style.color = i;
-	 */
-
-	//document.body.style.backgroundColor = rgb + "(" +(r+ " " + g + " "+ b )+ ")";
+	
 	let l  = rgb + "(" +(i   + " " + ii  + " "+ iii  )+ ")";
 	document.body.style.backgroundColor = l;
 }
