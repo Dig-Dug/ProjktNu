@@ -1,26 +1,32 @@
 <script>
-	import { text } from "svelte/internal";
 
-function d (){
-fetch("https://type.fit/api/quotes")
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(data) {
-    console.log(data);
-  });
-  }
+	let data;
+	const h = async () => {
+    data = await
+    fetch("https://type.fit/api/quotes").then((x) => x.json());
+    for(let i = 0; i < 1; i++){
+     i = Math.floor(Math.random() * (255 - 0 + 1)) + 0
+      console.log(data[i], "wwwwwwwwwwww");
+      return data;
+    }
+    //console.log(data)
+    //return data;
+	}
+ 
+
+
+//https://sveltesociety.dev/recipes/component-recipes/using-fetch-to-consume-apis		
 </script>
 
 
 
 
 
-<button on:click={d}>Generate quote</button>
+<button on:click={h}>Generate quote</button>
 
-
-<p>{text}</p>
-
+<pre>
+  {JSON.stringify(data)}
+</pre>
 
 <a  href="/">back</a>
 
