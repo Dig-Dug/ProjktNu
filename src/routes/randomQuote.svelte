@@ -1,26 +1,28 @@
 <script>
-    function lol(){
-        console.log("kffjoi")
-    }
+	import { text } from "svelte/internal";
 
-let back = () =>{
-    document.body.style.backgroundColor = "white";
-}
+function d (){
+fetch("https://type.fit/api/quotes")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    console.log(data);
+  });
+  }
 </script>
 
 
 
 
 
+<button on:click={d}>Generate quote</button>
 
 
-<button on:click={lol}>Generate Gradient</button>
+<p>{text}</p>
 
 
-<p></p>
-
-
-<a  href="/" on:click={back}>back</a>
+<a  href="/">back</a>
 
 
 <style>
