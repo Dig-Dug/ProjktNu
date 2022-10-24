@@ -15,7 +15,7 @@
 </footer>
 
 <style>
-	main { background-image: url("/static/owl.jpg");
+	main { 
 		flex: 1;
 		display: flex;
 		flex-direction: column;
