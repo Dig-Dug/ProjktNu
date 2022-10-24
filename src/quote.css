@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Nautilus';
+    src:local('Nautilus'), url("../static/fonts/Nautilus.otf") format('truetype');
+}
+   
+
+.n{
+    font-family: 'Nautilus';
+}

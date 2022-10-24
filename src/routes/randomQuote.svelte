@@ -2,7 +2,7 @@
 /* window.onload = (event) =>{
    document.designMode = "on";
 } */
-   $: color = "red";
+   $: color = "white";
    let src = "owl.jpg";
    let n = true; let pic = true;
    let data;
@@ -34,7 +34,7 @@ return
 
 <button on:click={h}>Generate quote</button>
 <p class:n style="color: {color};" >{JSON.stringify(r1)}</p>
-<p class:n style="color: {color};">{JSON.stringify(r)}</p>
+<p class:n style="color: {color}; margin-top: 3px;">{JSON.stringify(r)}</p>
 
 
 
@@ -42,10 +42,16 @@ return
 <img class:pic {src}/>
 
 <style>
+@font-face {
+    font-family: 'Nautilus';
+    src: url("../../static/fonts/AlexBrush-Regular.ttf") format('truetype');
+}
     body{margin: auto;
    
    }
-  .pic{
+  .pic{   height: 1139px;
+    width: 2000px;
+   position: absolute;
    z-index: -1;
   }
     
@@ -60,17 +66,18 @@ return
 background-color: black;
 color: aliceblue;
 	}
-   a{ border-radius: 4px;  width: 36px; top:100px;
-	background-color: rgba(220, 20, 60, 0.486);    
+   a{ margin: auto;border-radius: 4px;  width: 36px; top:100px;
+	background-color: rgb(255, 255, 255);    
    }
 
 
 p{margin-top: 83px;
-   font-family: 'yyy';
+   font-family: 'Nautilus';
    font-size: 30px;
    color: aliceblue;
 }
 .n{position: relative;top: 361px;
+   font-family: 'Nautilus';
    text-align: center;
 }
 img {
