@@ -24,7 +24,7 @@ import Header from '$lib/header/Header.svelte';
 </footer>
 
 <style>
-	main { 
+	main { cursor: pointer;
 		flex: 1;
 		display: flex;
 		flex-direction: column;

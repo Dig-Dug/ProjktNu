@@ -4,9 +4,10 @@
 } */
    $: color = "white";
    let src = "owl.jpg";
-   let n = true; let pic = true;
+   let n = true; let bod= true;
+    let pic = true;
    let data;
-   let r, r1;
+   let r = false, r1 = false;
 const h = async () => {
    document.designMode = "on";
     for(let i = 0; i < 1; i++){
@@ -31,28 +32,32 @@ return
 
 
 
-
+<body class:bod>
 <button on:click={h}>Generate quote</button>
+{#if r}
 <p class:n style="color: {color};" >{JSON.stringify(r1)}</p>
 <p class:n style="color: {color}; margin-top: 3px;">{JSON.stringify(r)}</p>
-
+{/if}
 
 
 <a  href="/">back</a>
 <img class:pic {src}/>
-
+</body>
 <style>
 @font-face {
     font-family: 'Nautilus';
     src: url("../../static/fonts/AlexBrush-Regular.ttf") format('truetype');
 }
-    body{margin: auto;
+    .bod{
+      overflow-y: clip;
+      margin: auto;min-height: 100vh;
    
    }
-  .pic{   height: 1139px;
-    width: 2000px;
-   position: relative;
-   z-index: -1;bottom: 319px;
+  .pic{   height: 1114px;
+    width: 2019px;
+    position: absolute;
+    z-index: -1;top: 0px;
+    bottom: 95px;
   }
     
     button{
@@ -61,7 +66,7 @@ return
 	   position: relative; 
 	   top: 321px;
     left: 47%;
-	   margin: auto;
+	   margin: auto;cursor: pointer;
 	}
 	button:hover{
 background-color: rgb(253 223 60);
@@ -70,7 +75,7 @@ background-color: rgb(253 223 60);
 	}
    a{ margin: auto;border-radius: 4px;  width: 36px; top:100px;
 	background-color: rgb(255, 255, 255); 
-   position: relative; left:30%;
+   position: absolute;top: 348px; left:30%;cursor: pointer;
    }
 
 
@@ -83,8 +88,8 @@ p{margin-top: 83px;
    font-family: 'Nautilus';
    text-align: center;
 }
-img {
-		position: relative;
+img {overflow-y: hidden;
+		position: absolute;
 		left: 0;
 		
 	}
