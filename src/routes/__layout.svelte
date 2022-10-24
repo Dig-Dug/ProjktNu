@@ -1,15 +1,23 @@
 <script>
-	import Header from '$lib/header/Header.svelte';
+import { page } from '$app/stores';
+import Header from '$lib/header/Header.svelte';
 	import '../app.css';
 	import '../quote.css';
 	
+	
 </script>
 
-<Header />
-
-<main>
+<!-- show header only in index -->
+{#if $page.url.pathname === '/'}
+  <!-- <div class="loco"> -->
+	<Header />
 	<slot />
-</main>
+  {:else}
+  <slot />
+{/if}
+<!-- <main>
+	<slot />
+</main> -->
 
 <footer>
 <!-- 	<p>visit <a href="https://kit.svelte.dev">kit.dsvelte.dev</a> to learn SvelteKit</p> -->
@@ -26,7 +34,9 @@
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
-
+.loco{
+	background-color: blueviolet;
+}
 /* 	footer {
 		display: flex;
 		flex-direction: column;

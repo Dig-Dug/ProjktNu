@@ -51,23 +51,26 @@ return
    }
   .pic{   height: 1139px;
     width: 2000px;
-   position: absolute;
-   z-index: -1;
+   position: relative;
+   z-index: -1;bottom: 319px;
   }
     
     button{
 	   background-color: rgb(255, 254, 251);
 		  width: 112px;border-radius: 4px;
 	   position: relative; 
-	   top: 40px;
+	   top: 321px;
+    left: 47%;
 	   margin: auto;
 	}
 	button:hover{
-background-color: black;
-color: aliceblue;
+background-color: rgb(253 223 60);
+
+
 	}
    a{ margin: auto;border-radius: 4px;  width: 36px; top:100px;
-	background-color: rgb(255, 255, 255);    
+	background-color: rgb(255, 255, 255); 
+   position: relative; left:30%;
    }
 
 

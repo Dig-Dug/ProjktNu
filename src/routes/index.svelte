@@ -29,8 +29,9 @@
 <div>	<a  href="/changeColor">changeColor</a> </div>
 <div>	<a  href="/gradientPicker">gradientPicker</a> </div>
 <div>	<a  href="/randomQuote">Random quote generator</a> </div>
-<div>	<a  href="/changeColor"></a> </div>
-<div>	<a  href="/changeColor"></a> </div>
+<div>	<a  href="/theMessage">theMessage</a></div>
+<div>	<a  href="/theMessage">comming soon</a> </div>
+
 
 </div>
 </section>
