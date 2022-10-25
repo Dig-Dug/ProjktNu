@@ -1,6 +1,14 @@
 <script>
 //let o = document.designMode = "on";
 let src = "cat.jpg";let pic = true; let bod = true;
+
+let message = '';
+let chot = '';
+function show (){
+   chot = message;
+   message = ''
+}
+
 </script>
 
 
@@ -11,10 +19,17 @@ let src = "cat.jpg";let pic = true; let bod = true;
 <div class="center">
     <h1>The Message</h1>
 <label >Enter the message</label>
-<input type="text">
-<button>submit</button>
-<a  href="/">back</a>
+<input type="text" bind:value={message}>
+<button on:click={show}>submit</button>
+{#if message}
+<h1 style="position: absolute; ">{message}</h1>
+{/if}
+<br>
+        <div class="du">
+        <p class="o">{chot}</p>
+        </div>
 </div>
+<a  href="/">back</a>
 <img class:pic {src}/>
 </body>
 <style>
@@ -25,8 +40,18 @@ let src = "cat.jpg";let pic = true; let bod = true;
       overflow-y: clip;
       margin: auto;min-height: 100vh;
    
-   }   
-h1{    margin-bottom: 78px;}
+   }
+.o{
+    font-size: 29px;
+}
+ .du{ border-radius: 3% 3% 3% 3% ;
+    background-color: #e8daa7;
+    margin-top: 133px; height: 230px;
+ }
+h1{  
+     margin-bottom: 78px;
+
+}
 .center{position: absolute;
   top: 150px;
   left: 32%;
@@ -49,4 +74,7 @@ label{
 button{
     cursor: pointer;
 }
+a {margin: auto;border-radius: 4px;  width: 36px; top:100px;
+	background-color: rgb(218, 15, 15); 
+   position: absolute;top: 348px; left:32%;cursor: pointer;}
 </style>
