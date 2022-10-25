@@ -69,7 +69,7 @@ p {font-family: 'Rokkitt', serif;
 a { font-family: 'Rokkitt', serif;
 	color: var(--accent-color);
 	text-decoration: none;
-	
+	cursor: pointer;
 }
 
 a:hover {
@@ -98,7 +98,7 @@ pre {
 
 input,
 button {font-family: 'Nunito', sans-serif;
-
+	cursor: pointer;
 	font-size: inherit;
 	
 }
@@ -106,6 +106,14 @@ button {font-family: 'Nunito', sans-serif;
 button:focus:not(:focus-visible) {
 	outline: none;
 }
+/* @font-face {
+    font-family: 'Nautilus';
+    src:local('Nautilus'), url("../static/fonts/Nautilus.otf") format('truetype');
+}
+
+input {
+    font-family: 'Nautilus';
+} */
 
 @media (min-width: 720px) {
 	h1 {
