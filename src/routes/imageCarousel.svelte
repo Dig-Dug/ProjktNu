@@ -12,6 +12,11 @@ let index = 0;
 const next = () => {
     index = (index + 1) % cp.length
 }
+
+/* List libraries:
+https://valexr.github.io/Slidy/
+https://madewithsvelte.com/svelte-slidy */
+
 </script>
 <h1>Image Carousel</h1>
 <div class="all">
@@ -20,6 +25,7 @@ const next = () => {
 <img transition:fade {src} alt="">
 {/each}
 <button on:click={next}>Click</button>
+
 <a href="/">back</a>
 </div>
 
@@ -32,13 +38,13 @@ const next = () => {
     margin-right: -50%;
     transform: translate(-50%, -50%) }
     a{
-        background-color: darkorange;
+        background-color: darkorange; top: 422px;
         position: absolute;
     }
     img, button {
 		position: absolute;
-        
-	}
+     }
+    
 </style>
 
 

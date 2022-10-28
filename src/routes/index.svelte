@@ -31,6 +31,7 @@
 <div>	<a  href="/randomQuote">Random quote generator</a> </div>
 <div>	<a  href="/theMessage">theMessage</a></div>
 <div>	<a  href="/imageCarousel">image carousel</a> </div>
+<div>	<a  href="/theCounter">the counter</a> </div>
 
 
 </div>

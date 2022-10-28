@@ -23,21 +23,30 @@ function back(){
 
 
 </script>
-
-
-	<h1>Gradient Picker</h1>
+<h1>Gradient Picker</h1>
+<div class="center">
+	
 
 	<button   on:click={getGradient} on:mouseover={getGradient} on:focus={getGradient}>Generate Gradient</button>
 
-<p>{z}</p>
+<p class="poi">{z}</p>
 
 
 
 <a  href="/" on:click={back}>back</a>
 
-
+</div>
 
 <style>
+   .center{
+      margin-left: 37%;
+    margin-right: 38%;
+
+   }
+   .poi{
+      padding-bottom: 13px;
+    padding-top: 14px;
+   }
 button{
 	   background-color: rgb(255, 254, 251);
 		  width: 112px;border-radius: 4px;
@@ -49,7 +58,9 @@ button{
 background-color: black;
 color: aliceblue;
 	}
-   a{ border-radius: 4px;  width: 36px; top:100px;
+   a{ 
+      position: relative;
+      border-radius: 4px;  width: 36px; top:44px;
 	background-color: rgba(220, 20, 60, 0.486);    
    }
    p{
