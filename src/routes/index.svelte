@@ -30,7 +30,7 @@
 <div>	<a  href="/gradientPicker">gradientPicker</a> </div>
 <div>	<a  href="/randomQuote">Random quote generator</a> </div>
 <div>	<a  href="/theMessage">theMessage</a></div>
-<div>	<a  href="/theMessage">comming soon</a> </div>
+<div>	<a  href="/imageCarousel">image carousel</a> </div>
 
 
 </div>
