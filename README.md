@@ -1,4 +1,4 @@
-# 25 JS Projects into Svelte
+# 25 JS Projects into Svelte :robot:
 
 series of different small projects based on this article.[`25 Beginner JavaScript Project Ideas`](https://dev.to/codefoxx/25-beginner-javascript-project-ideas-3m9h)
 
