@@ -1,3 +1,5 @@
+series of different small projects based on this wonderful article.[`25 Beginner JavaScript Project Ideas`](https://dev.to/codefoxx/25-beginner-javascript-project-ideas-3m9h)
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
