@@ -33,6 +33,7 @@
 		<div><a href="/imageCarousel">image carousel</a></div>
 		<div><a href="/theCounter">the counter</a></div>
 		<div><a href="/digitalClock">Digital Clock</a></div>
+		<div><a href="/calculator">Calculator</a></div>
 	</div>
 </section>
 
