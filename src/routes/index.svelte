@@ -3,7 +3,6 @@
 </script>
 
 <script>
-	
 	//import Counter from '$lib/Counter.svelte';
 </script>
 
@@ -13,8 +12,9 @@
 </svelte:head>
 
 <section>
-	<h1>  Svelte Project Ideas
-	<!-- 		<span class="welcome">
+	<h1>
+		Svelte Project Ideas
+		<!-- 		<span class="welcome">
 				<picture>
 					<source srcset="svelte-welcome.webp" type="image/webp" />
 					<img src="svelte-welcome.png" alt="Welcome" />
@@ -23,44 +23,43 @@
 
 			to your new<br />SvelteKit app
 	-->
-</h1>
-<!-- <Counter /> -->
-<div class="parent">
-<div>	<a  href="/changeColor">changeColor</a> </div>
-<div>	<a  href="/gradientPicker">gradientPicker</a> </div>
-<div>	<a  href="/randomQuote">Random quote generator</a> </div>
-<div>	<a  href="/theMessage">theMessage</a></div>
-<div>	<a  href="/imageCarousel">image carousel</a> </div>
-<div>	<a  href="/theCounter">the counter</a> </div>
-
-
-</div>
+	</h1>
+	<!-- <Counter /> -->
+	<div class="parent">
+		<div><a href="/changeColor">changeColor</a></div>
+		<div><a href="/gradientPicker">gradientPicker</a></div>
+		<div><a href="/randomQuote">Random quote generator</a></div>
+		<div><a href="/theMessage">theMessage</a></div>
+		<div><a href="/imageCarousel">image carousel</a></div>
+		<div><a href="/theCounter">the counter</a></div>
+		<div><a href="/digitalClock">Digital Clock</a></div>
+	</div>
 </section>
 
 <style>
-.parent {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(2, 1fr);
-	grid-column-gap: 42px;
-	grid-row-gap: 17px;
-}
-a:hover{
-	color: orange;
-}
-section {
+	.parent {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-column-gap: 42px;
+		grid-row-gap: 17px;
+	}
+	a:hover {
+		color: orange;
+	}
+	section {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		flex: 1;
-}
+	}
 
-h1 {
+	h1 {
 		width: 100%;
-}
+	}
 
-/* 	.welcome {
+	/* 	.welcome {
 		display: block;
 		position: relative;
 		width: 100%;
