@@ -1,12 +1,11 @@
 <script>
 	import { page } from '$app/stores';
 	import logo from './jk.png';
-	
 </script>
 
 <header>
 	<div class="corner">
-		<a href="https://github.com/Dig-Dug">
+		<a href="https://github.com/Dig-Dug" target="_blank">
 			<img src={logo} alt="SvelteKit" />
 		</a>
 	</div>
@@ -27,7 +26,7 @@
 				<a sveltekit:prefetch href="/whot">tztzt</a>
 			</li>
 		</ul> -->
-	<!-- 	<svg viewBox="0 0 2 3" aria-hidden="true">
+		<!-- 	<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
 		</svg> -->
 	</nav>
@@ -36,7 +35,6 @@
 		<!-- TODO put something else here? github link? -->
 	</div>
 </header>
-
 
 <style>
 	header {
@@ -64,13 +62,13 @@
 	}
 
 	nav {
-	/* 	display: flex;
+		/* 	display: flex;
 		justify-content: center;
 		--background: rgba(255, 255, 255, 0.7); */
 	}
 
 	svg {
-	/* 	width: 2em;
+		/* 	width: 2em;
 		height: 3em;
 		display: block; */
 	}
