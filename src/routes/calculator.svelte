@@ -1,4 +1,5 @@
 <script>
+	let three = 3;
 	let num = 0;
 	function sum() {
 		return num + num;
@@ -6,6 +7,9 @@
 	function result() {
 		console.log(sum);
 		sum();
+	}
+	function numb() {
+		console.log(num);
 	}
 </script>
 
@@ -16,6 +20,8 @@
 		type="button"
 		on:click={() => {
 			num = 1;
+			console.log(num);
+			num += num;
 		}}
 		value="1"
 	/>
@@ -26,7 +32,7 @@
 		}}
 		value="2"
 	/>
-	<input type="button" value="3" />
+	<input type="button" on:click={numb} bind:value={three} />
 	<input type="button" value="4" />
 	<input type="button" value="5" />
 	<input type="button" value="6" />
@@ -35,7 +41,14 @@
 	<input type="button" value="9" />
 	<input type="button" value="." />
 	<input type="button" value="0" />
-	<input type="button" value="C" />
+	<input
+		type="button"
+		on:click={() => {
+			num = 0;
+			console.log(num);
+		}}
+		value="C"
+	/>
 </div>
 
 <div class="operators">
