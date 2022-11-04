@@ -4,14 +4,23 @@
 	export let value = '';
 
 	const dispatch = createEventDispatcher();
-
+	let r;
 	const select = (num) => () => (value += num);
+
 	const clear = () => (value = '');
-	const submit = () => dispatch('submit');
-	let sum = () => {
-		console.log(value + value);
-		return (value += value);
-	};
+	const submit = () =>
+		dispatch(
+			'submit',
+
+			console.log(sum)
+		);
+	function sum() {
+		let r = value;
+		console.log((r += value));
+		value += '+';
+		//return r;
+		return value;
+	}
 </script>
 
 <div class="keypad">
