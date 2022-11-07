@@ -3,10 +3,14 @@
 	import Keypad from './todos/Keypad.svelte';
 
 	let pin;
+
 	//$: view = pin ? pin.replace(/\d(?!$)/g, '•') : '';
 	$: view = pin;
+
 	function handleSubmit() {
-		alert(`submitted ${pin}`);
+		//alert(`submitted ${pin}`);
+		//let r = parse(pin);
+		console.log(pin);
 	}
 </script>
 

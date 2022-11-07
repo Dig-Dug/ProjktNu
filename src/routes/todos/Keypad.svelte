@@ -2,24 +2,29 @@
 	import { createEventDispatcher } from 'svelte';
 
 	export let value = '';
+	export let value1 = '';
 
 	const dispatch = createEventDispatcher();
 	let r;
 	const select = (num) => () => (value += num);
+	const select1 = (num) => () => (value1 += num);
 
 	const clear = () => (value = '');
 	const submit = () =>
 		dispatch(
 			'submit',
 
-			console.log(sum)
+			console.log(sum())
 		);
 	function sum() {
+		let pars = parseInt(value);
+		let pars1 = parseInt(value1);
+		//pam = parseInt(value);
 		let r = value;
-		console.log((r += value));
+		console.log(pars, pars1);
 		value += '+';
 		//return r;
-		return value;
+		return pars;
 	}
 </script>
 
@@ -39,6 +44,7 @@
 	<button disabled={!value} on:click={submit}>=</button>
 	<div class="op">
 		<button disabled={!value} on:click={sum}>+</button>
+		<button disabled={!value} on:click={(select1) => sum(select1)}>++++</button>
 		<button disabled={!value} on:click={submit}>-</button>
 		<button disabled={!value} on:click={submit}>*</button>
 		<button disabled={!value} on:click={submit}>/</button>
