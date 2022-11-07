@@ -2,29 +2,36 @@
 	import { createEventDispatcher } from 'svelte';
 
 	export let value = '';
-	export let value1 = '';
+	export let s;
 
 	const dispatch = createEventDispatcher();
 	let r;
 	const select = (num) => () => (value += num);
-	const select1 = (num) => () => (value1 += num);
 
 	const clear = () => (value = '');
-	const submit = () =>
+	/* 	const submit = () =>
 		dispatch(
 			'submit',
 
-			console.log(sum())
-		);
+			console.log(s)
+		); */
+	function submit() {
+		console.log(s, 'www');
+		dispatch('submit');
+		return s;
+	}
 	function sum() {
-		let pars = parseInt(value);
-		let pars1 = parseInt(value1);
-		//pam = parseInt(value);
 		let r = value;
-		console.log(pars, pars1);
+		let u = r.split('');
+		s = 0;
+		let f = u.filter((a) => a !== '+');
+		for (let i = 0; i < f.length; i++) {
+			s += parseInt(f[i]);
+		}
+		console.log(r, u, f, s);
 		value += '+';
 		//return r;
-		return pars;
+		return s;
 	}
 </script>
 

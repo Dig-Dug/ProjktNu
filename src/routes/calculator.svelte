@@ -10,7 +10,8 @@
 	function handleSubmit() {
 		//alert(`submitted ${pin}`);
 		//let r = parse(pin);
-		console.log(pin);
+		//console.log(pin, '<....', sum());
+		//console.log(pin);
 	}
 </script>
 
