@@ -21,7 +21,8 @@
 		alert(input + ',' + psw);
 		localStorage.setItem(input, 'wwww');
 	}
-	// bind:value={email}
+	let src = 'rr.gif';
+	let pic = true;
 </script>
 
 <!-- 
@@ -34,8 +35,9 @@
         <button disabled={!$form.valid}>Submit</button>
     </form> 
 -->
-<h1>Login User</h1>
+
 <form use:form>
+	<h1>Login User</h1>
 	<input bind:value={input} type="email" name="email" use:validators={[required, email]} />
 	<HintGroup for="email">
 		<Hint on="required">This is a mandatory field</Hint>
@@ -48,8 +50,10 @@
 	<p><small>check Local store for saved input in dev tools &#127913;</small></p>
 	<!-- 	<h2>{input}</h2>
 	<h2>{psw}</h2> -->
+	<a href="/">back</a>
 </form>
-<a href="/">back</a>
+
+<img class:pic {src} />
 
 <style>
 	form {
@@ -68,5 +72,12 @@
 		margin: auto;
 		width: 50%;
 		padding: 10px;
+	}
+	.pic {
+		position: relative;
+		margin: auto;
+		left: 609px;
+		width: 317px;
+		height: 228px;
 	}
 </style>
