@@ -1,5 +1,4 @@
 <script>
-	//import{ goto } from '@sapper/app';
 	import {
 		useForm,
 		HintGroup,
@@ -50,9 +49,10 @@
 	<br />
 	<input bind:value={psw} type="password" name="password" use:validators={[required]} />
 	<Hint for="password" on="required">This is a mandatory field</Hint>
-	<a class="btn" href="./todos/blog.svelte" disabled={!$form.valid} on:click={logIt}>Login</a>
+	<!-- <a class="btn" href="./test/blog.svelte" disabled={!$form.valid} on:click={logIt}>Login</a> -->
+	<a class="btn" href="./todos/blog">Login</a>
 	<p><small>check Local store for saved input in dev tools &#127913;</small></p>
-	<!-- 	<h2>{input}</h2>
+	<!-- 	<h2>{input}  http://localhost:5173/todos/blog </h2>
 	<h2>{psw}</h2> -->
 	<a href="/">back</a>
 </form>
