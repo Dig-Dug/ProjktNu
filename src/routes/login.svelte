@@ -72,6 +72,7 @@
 		position: sticky;
 	}
 	a {
+		background-color: orange;
 		position: fixed;
 		margin: auto;
 		width: 50%;
