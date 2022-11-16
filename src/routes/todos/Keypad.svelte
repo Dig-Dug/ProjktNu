@@ -28,7 +28,8 @@
 		for (let i = 0; i < f.length; i++) {
 			s += parseInt(f[i]);
 		}
-		console.log(r, u, f, s);
+		//console.log(r, u, f, s);
+		console.log(r, s);
 		value += '+';
 		//return r;
 		return s;

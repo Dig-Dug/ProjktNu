@@ -6,6 +6,10 @@ series of different small projects based on this article.[`25 Beginner JavaScrip
 
 (https://dig-dug.github.io/funprjkts.github.io/)
 
+## live SvelteKit Version
+
+https://projkt-nu.vercel.app/
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
