@@ -1,4 +1,5 @@
 <script>
+	//import{ goto } from '@sapper/app';
 	import {
 		useForm,
 		HintGroup,
@@ -18,11 +19,14 @@
 	//let pswe = localStorage.getItem(psw);
 	function logIt() {
 		console.log(form);
-		alert(input + ',' + psw);
+		//alert(input + ',' + psw);
 		localStorage.setItem(input, 'wwww');
 	}
 	let src = 'rr.gif';
 	let pic = true;
+	/* let d = () => {
+		console.log('goto');
+	}; */
 </script>
 
 <!-- 
@@ -46,7 +50,7 @@
 	<br />
 	<input bind:value={psw} type="password" name="password" use:validators={[required]} />
 	<Hint for="password" on="required">This is a mandatory field</Hint>
-	<button disabled={!$form.valid} on:click={logIt}>Login</button>
+	<a class="btn" href="./todos/blog.svelte" disabled={!$form.valid} on:click={logIt}>Login</a>
 	<p><small>check Local store for saved input in dev tools &#127913;</small></p>
 	<!-- 	<h2>{input}</h2>
 	<h2>{psw}</h2> -->
@@ -79,5 +83,11 @@
 		left: 609px;
 		width: 317px;
 		height: 228px;
+	}
+	.btn {
+		background-color: red;
+		width: 45px;
+		height: 8px;
+		left: 556px;
 	}
 </style>
