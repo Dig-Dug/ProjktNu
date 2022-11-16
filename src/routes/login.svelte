@@ -54,10 +54,9 @@
 	<p><small>check Local store for saved input in dev tools &#127913;</small></p>
 	<!-- 	<h2>{input}  http://localhost:5173/todos/blog </h2>
 	<h2>{psw}</h2> -->
+	<img class:pic {src} />
 	<a href="/">back</a>
 </form>
-
-<img class:pic {src} />
 
 <style>
 	form {
@@ -72,16 +71,15 @@
 		position: sticky;
 	}
 	a {
-		background-color: orange;
 		position: fixed;
 		margin: auto;
 		width: 50%;
 		padding: 10px;
 	}
 	.pic {
-		position: relative;
+		position: absolute;
 		margin: auto;
-		left: 609px;
+		right: auto;
 		width: 317px;
 		height: 228px;
 	}
@@ -89,6 +87,7 @@
 		background-color: red;
 		width: 45px;
 		height: 8px;
-		left: 556px;
+		left: auto;
+		margin-left: 14px;
 	}
 </style>
