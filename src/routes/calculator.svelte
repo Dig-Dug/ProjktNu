@@ -1,10 +1,11 @@
 <script>
-	import { onMount } from 'svelte';
-	import Buttonz from './todos/buttonz.svelte';
-	let p = 66;
+	import Buttonz from './todos/calc/buttonz.svelte';
+	import { writable } from 'svelte/store';
 
+	let p;
+	export const count = writable(0);
 	function sum() {
-		console.log(p + p);
+		p.update((n) => n + 1);
 	}
 </script>
 
@@ -12,9 +13,9 @@
 <div class="digits">
 	<Buttonz bind:p />
 	<div class="buttonz">
-		<button on:click={p}>+</button>
+		<button on:click={sum}>+</button>
 	</div>
-	<div>{p}</div>
+	<div>{count}</div>
 </div>
 
 <a href="/">back</a>
