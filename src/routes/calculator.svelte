@@ -1,40 +1,32 @@
 <script>
-	//import Keypad from './Keypad.svelte';
-	import Keypad from './todos/Keypad.svelte';
+	import { onMount } from 'svelte';
+	import Buttonz from './todos/buttonz.svelte';
+	let p = 66;
 
-	let pin;
-
-	//$: view = pin ? pin.replace(/\d(?!$)/g, '•') : '';
-	$: view = pin;
-
-	function handleSubmit() {
-		//alert(`submitted ${pin}`);
-		//let r = parse(pin);
-		//console.log(pin, '<....', sum());
-		//console.log(pin);
+	function sum() {
+		console.log(p + p);
 	}
 </script>
 
-<h1>The Svelte Calculator</h1>
-<div class="center">
-	<Keypad bind:value={pin} on:submit={handleSubmit} />
-	<h1>{view}</h1>
+<h1>Calculate &#x1F92F</h1>
+<div class="digits">
+	<Buttonz bind:p />
+	<div class="buttonz">
+		<button on:click={p}>+</button>
+	</div>
+	<div>{p}</div>
 </div>
-<label>
-	<a href="/">back</a>
-</label>
+
+<a href="/">back</a>
 
 <style>
-	.center {
-		left: 38%;
-		position: relative;
+	.digits {
+		margin-left: 60%;
 	}
 	a {
-		left: 38%;
-		position: relative;
 		background-color: orange;
 	}
-	h1 {
-		position: sticky;
+	.buttonz {
+		margin-top: 13px;
 	}
 </style>
