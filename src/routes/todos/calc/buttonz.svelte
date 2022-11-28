@@ -1,5 +1,6 @@
 <script>
-	let p = 0;
+	import { writable } from 'svelte/store';
+	export const p = writable(70);
 	//count += p;
 	const ha = (p) => () => {
 		console.log(p, '<--');
