@@ -3,7 +3,7 @@
 	import p from './todos/calc/buttonz.svelte'; */
 	import { writable } from 'svelte/store';
 
-	let count = writable(770);
+	let count = writable(0);
 	/* const count = writable(770); */
 	let p = writable(5);
 
@@ -12,10 +12,11 @@
 		p += 4;
 		//return p;
 	};
-	let countValue = 0;
+	//let countValue = 0;
 
 	function sum() {
-		count.update((p) => p + 1);
+		count.update((p) => p + 7);
+
 		console.log((p += p));
 	}
 	function minus() {
@@ -26,7 +27,7 @@
 		p.set(0);
 	}
 	count.subscribe((value) => {
-		countValue = value;
+		p = value;
 	});
 </script>
 
@@ -43,10 +44,14 @@
 	<!-- 	<button on:click={ha(2)}> 2 </button> -->
 	<button on:click={() => (p = 1)}> 1 </button>
 	<button on:click={() => (p = 2)}> 2 </button>
+	<button on:click={() => (count = 4)}> 4 </button>
+	<button on:click={() => (count = 5)}> 5 </button>
 
 	<br />
-	<div>{countValue}</div>
-	<div>{p}</div>
+	<!-- <p>{countValue}</p> -->
+	<p>{p}</p>
+	<p>{count}</p>
+	<input type="number" bind:value={p} />
 	<a href="/">back</a>
 	<!-- <div>{count}</div> -->
 </div>
