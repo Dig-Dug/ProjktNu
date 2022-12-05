@@ -2,9 +2,17 @@
 	import Card from './todos/card.svelte';
 
 	let open = false;
+
+	//document.getElementById("").addEventListener("click", addCard)
+	export let id = undefined;
+	export let r = document.getElementById('this');
 	function addCard() {
 		open = true;
-		return;
+		id = 'this';
+		console.log(r, '<---');
+		//e = d;
+
+		//return;
 	}
 	function delCard() {
 		open = false;
@@ -20,7 +28,7 @@
 <a href="/">back</a>
 
 {#if open}
-	<Card on:click={whot} />
+	<Card />
 {/if}
 
 <style>
