@@ -73,7 +73,7 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
-
+	/*  lolo */
 	.cr {
 		font-size: 22px;
 		width: 26px;
