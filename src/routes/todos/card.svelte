@@ -68,11 +68,14 @@
 	}
 	.dov {
 		background-color: antiquewhite;
-		position: fixed;
+		position: relative;
+		margin-left: auto;
+		width: 402px;
+		margin-right: auto;
 	}
 	p {
-		margin-bottom: 0px;
-		margin-top: 0px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	.cr {
 		font-size: 22px;
