@@ -69,14 +69,11 @@
 	.dov {
 		background-color: antiquewhite;
 		position: relative;
-		margin-left: auto;
 		width: 402px;
-		margin-right: auto;
-	}
-	p {
 		margin-left: auto;
 		margin-right: auto;
 	}
+
 	.cr {
 		font-size: 22px;
 		width: 26px;
