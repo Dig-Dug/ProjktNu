@@ -1,30 +1,28 @@
 <script>
-import { page } from '$app/stores';
-import Header from '$lib/header/Header.svelte';
+	import { page } from '$app/stores';
+	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
 	import '../quote.css';
-	
-	
 </script>
 
 <!-- show header only in index -->
 {#if $page.url.pathname === '/'}
-  <!-- <div class="loco"> -->
+	<!-- <div class="loco"> -->
 	<Header />
 	<slot />
-  {:else}
-  <slot />
+{:else}
+	<slot />
 {/if}
 <!-- <main>
 	<slot />
 </main> -->
 
-<footer>
-<!-- 	<p>visit <a href="https://kit.svelte.dev">kit.dsvelte.dev</a> to learn SvelteKit</p> -->
-</footer>
-
+<!-- <footer>
+	<p>visit <a href="https://kit.svelte.dev">kit.dsvelte.dev</a> to learn SvelteKit</p> 
+</footer> -->
 <style>
-	main { cursor: pointer;
+	main {
+		cursor: pointer;
 		flex: 1;
 		display: flex;
 		flex-direction: column;
@@ -34,10 +32,10 @@ import Header from '$lib/header/Header.svelte';
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
-.loco{
-	background-color: blueviolet;
-}
-/* 	footer {
+	.loco {
+		background-color: blueviolet;
+	}
+	/* 	footer {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -45,7 +43,7 @@ import Header from '$lib/header/Header.svelte';
 		padding: 40px;
 	} */
 
-/* 	footer a {
+	/* 	footer a {
 		font-weight: bold;
 	}
 
