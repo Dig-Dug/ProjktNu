@@ -14,10 +14,12 @@
 		localStorage.setItem(answer, '<--'); */
 		flashcard = true;
 		console.log(r, '^^^^');
+		return;
 	}
 	function close() {
 		console.log(nope);
-		nope = false;
+		//nope = false;
+		flashcard = false;
 	}
 	function show() {
 		showIt = true;

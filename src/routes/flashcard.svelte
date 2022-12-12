@@ -18,6 +18,7 @@
 	}
 	function delCard() {
 		open = false;
+		return;
 	}
 	function whot() {
 		console.log('kioppoi');

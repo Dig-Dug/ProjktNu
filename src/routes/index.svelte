@@ -37,6 +37,7 @@
 		<div><a href="/calculator2">Calculator</a></div>
 		<div><a href="/login">Login User</a></div>
 		<div><a href="/flashcard">Flashcards</a></div>
+		<div><a href="/flashcard1">Flashcard 1</a></div>
 	</div>
 </section>
 
