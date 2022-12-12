@@ -1,7 +1,17 @@
 <script>
-	export let questions = [];
+	export let questions = [{ question: '', answer: '' }];
 	let question = '';
 	let answer = '';
+
+	/* 	function save() {
+		questions = [...questions];
+		question = '';
+		answer = '';
+	} */
+	function save() {
+		//questions.push(question, answer);
+		console.log(questions);
+	}
 </script>
 
 <div class="p">
@@ -14,6 +24,10 @@
 <input placeholder="write answer here" bind:value={answer} type="text" />
 <button on:click={save}>save</button>
 <button on:click={close}>close</button>
+{#each questions as { question, answer }}
+	<p>{question}</p>
+	<p>{answer}</p>
+{/each}
 
 <style>
 	.p {
