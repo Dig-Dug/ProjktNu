@@ -22,8 +22,14 @@
 		//nope = false;
 		flashcard = false;
 	}
+	function hideA() {
+		answer = '';
+	}
 	function show() {
 		showIt = true;
+	}
+	function newOne() {
+		console.log('ne');
 	}
 </script>
 
@@ -50,6 +56,7 @@
 		<button on:click={save}>Save</button>
 
 		<button on:click={close}>Close</button>
+		<button on:click={newOne}>new Card</button>
 		<!-- <button>Close {i}</button> -->
 	</div>
 {/if}
@@ -59,7 +66,7 @@
 		<p>{question} &#11013 show answer?</p>
 		{#if showIt}
 			<p>{answer}</p>
-			<p on:click={close}>&#11013 hide</p>
+			<p on:click={hideA}>&#11013 hide</p>
 		{/if}
 	</div>
 {/if}
