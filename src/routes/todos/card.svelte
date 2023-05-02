@@ -4,6 +4,7 @@
 	let answer = '';
 	let flashcard = false;
 	let showIt = false;
+	let hide = '';
 	let nope = true;
 	let id = 'this';
 
@@ -47,6 +48,7 @@
 			bind:value={answer}
 		/>
 		<button on:click={save}>Save</button>
+
 		<button on:click={close}>Close</button>
 		<!-- <button>Close {i}</button> -->
 	</div>
@@ -57,6 +59,7 @@
 		<p>{question} &#11013 show answer?</p>
 		{#if showIt}
 			<p>{answer}</p>
+			<p on:click={close}>&#11013 hide</p>
 		{/if}
 	</div>
 {/if}

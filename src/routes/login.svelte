@@ -54,7 +54,7 @@
 	<p><small>check Local store for saved input in dev tools &#127913;</small></p>
 	<!-- 	<h2>{input}  http://localhost:5173/todos/blog </h2>
 	<h2>{psw}</h2> -->
-	<img class:pic {src} />
+	<img class:pic {src} alt="whot" />
 	<a href="/">back</a>
 </form>
 
