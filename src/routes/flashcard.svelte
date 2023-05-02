@@ -5,13 +5,13 @@
 
 	//document.getElementById("").addEventListener("click", addCard)
 	export let id = undefined;
-	export let r = document.getElementById('this');
+	//export let r = document.getElementById('this');
 
 	function addCard() {
 		open = true;
 		id = 'this';
 
-		console.log(r, '<---');
+		console.log('<---');
 		//e = d;
 
 		//return;

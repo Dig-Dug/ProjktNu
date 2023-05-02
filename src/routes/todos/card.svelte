@@ -1,4 +1,6 @@
 <script>
+	// @ts-nocheck
+	import open from '../flashcard.svelte';
 	/* let pp = 'sr'; */
 	let question = '';
 	let answer = '';
@@ -18,12 +20,15 @@
 		return;
 	}
 	function close() {
-		console.log(nope);
-		//nope = false;
-		flashcard = false;
+		//	console.log(nope);
+		//open = true;
+		let r = document.getElementById('div1');
+		r.classList.add('hide');
+		console.log(open, r);
 	}
 	function hideA() {
-		answer = '';
+		//answer = '';
+		flashcard = false;
 	}
 	function show() {
 		showIt = true;
@@ -63,13 +68,16 @@
 
 {#if flashcard}
 	<div class="dov" on:click={show}>
-		<p>{question} &#11013 show answer?</p>
+		<p>{question}</p>
+		<p>&#11013 show answer?</p>
 		{#if showIt}
 			<p>{answer}</p>
 			<p on:click={hideA}>&#11013 hide</p>
 		{/if}
 	</div>
 {/if}
+
+<!-- svelte-ignore empty-block -->
 
 <!-- {/each} -->
 <style>
@@ -79,11 +87,20 @@
 		position: fixed;
 	}
 	.dov {
-		background-color: antiquewhite;
+		background-color: rgb(110, 204, 160);
 		position: relative;
+		top: 25px;
+		border-radius: 14px;
+
 		width: 402px;
 		margin-left: auto;
 		margin-right: auto;
+
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-column-gap: 0px;
+		grid-row-gap: 0px;
 	}
 	/*  lolo */
 	.cr {
@@ -99,6 +116,10 @@
 		margin-right: auto;
 	}
 	#nope {
+		visibility: hidden;
+	}
+	.hide {
+		position: relative;
 		visibility: hidden;
 	}
 </style>
