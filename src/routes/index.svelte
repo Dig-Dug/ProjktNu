@@ -38,6 +38,7 @@
 		<div><a href="/login">Login User</a></div>
 		<div><a href="/flashcard">Flashcards</a></div>
 		<div><a href="/flashcard1">Flashcard 1</a></div>
+		<div><a href="/arrayRemove">remove from array</a></div>
 	</div>
 </section>
 

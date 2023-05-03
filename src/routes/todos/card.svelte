@@ -6,7 +6,7 @@
 	let answer = '';
 	let flashcard = false;
 	let showIt = false;
-	let hide = '';
+	let hide = false;
 	let nope = true;
 	let id = 'this';
 
@@ -27,8 +27,8 @@
 		console.log(open, r);
 	}
 	function hideA() {
-		//answer = '';
-		flashcard = false;
+		showIt = false;
+		//flashcard = false;
 	}
 	function show() {
 		showIt = true;
@@ -61,7 +61,7 @@
 		<button on:click={save}>Save</button>
 
 		<button on:click={close}>Close</button>
-		<button on:click={newOne}>new Card</button>
+
 		<!-- <button>Close {i}</button> -->
 	</div>
 {/if}
@@ -69,10 +69,9 @@
 {#if flashcard}
 	<div class="dov" on:click={show}>
 		<p>{question}</p>
-		<p>&#11013 show answer?</p>
+
 		{#if showIt}
-			<p>{answer}</p>
-			<p on:click={hideA}>&#11013 hide</p>
+			<p on:click={() => (show = hideA)}>{answer}</p>
 		{/if}
 	</div>
 {/if}
