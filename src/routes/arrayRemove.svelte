@@ -1,40 +1,71 @@
 <script>
-	//Remove First and Last Character Part Two
-	import { onMount } from 'svelte';
-	let re = 0;
-	let r = 10;
+	let ran = Math.floor(Math.random() * 10) + 3;
 
-	let ree = document.createElement('p');
+	let f = [ran];
+	let r = false;
+
 	function gen() {
-		let r = Math.floor(Math.random() * 10) + 3;
-		for (let i = 0; i < 10; i++) {
-			re = r;
-			let rrr = parseInt(i);
-
-			onMount(() => {
-				let ree = document.createElement('p');
-				//re.innerText = `${re}`;
-				ree.innerHTML = 'ee';
-
-				document.body.appendChild(ree);
-				console.log(ree, re);
-				//listNode.appendChild(re);
-				return ree;
-			});
-			//console.log(r, rrr);
-			//return;
+		r = true;
+		for (let i = 0; i < ran; i++) {
+			f.push(ran * i);
 		}
+		return;
 	}
-	/* function gen() {
-		return (re = 10);
-	} */
-	//document.body.appendChild(ree);
+
+	function changeColor2() {
+		let i = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+		let ii = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+		let iii = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+		let rgb = 'rgb';
+		let l = rgb + '(' + (i + ' ' + ii + ' ' + iii) + ')';
+		document.getElementById('hor2').style.backgroundColor = l;
+	}
+	function rem() {
+		if (f) {
+			for (let i = 0; i < f.length; i++) {
+				f = f.slice(1, -1);
+
+				console.log(f);
+				return;
+			}
+		}
+		//f = [0];
+	}
 </script>
 
-<p>remove first and last element of array</p>
-<button on:click={gen}>elements generator</button>
-{#if re}
-	<p bind:this={re}>{re}</p>
-	<!--<p>{re} * {re}</p>-->
-	<p>{ree} *= {re}</p>
-{/if}
+<div id="con">
+	<p>remove first and last element of array</p>
+	<button class="bu" on:click={gen}>elements generator</button>
+	<button class="bu" on:click={rem}>remove first & last element</button>
+	<br />
+	<a href="/">back</a>
+	<br />
+	{#if r}
+		{#each f as fs}
+			<!--<div class="hor" id="hor2">w {ran}</div>-->
+			<div class="hor" bind:this={ran}>{f}</div>
+		{/each}
+	{/if}
+</div>
+
+<style>
+	a {
+		border-radius: 4px;
+		width: 36px;
+		background-color: rgba(220, 20, 60, 0.486);
+		height: 23px;
+	}
+	#con {
+		position: absolute;
+		left: 20px;
+		top: 20%;
+	}
+	.hor {
+		display: inline;
+		background-color: i;
+	}
+	.bu {
+		margin-bottom: 14px;
+		margin-right: 12px;
+	}
+</style>
