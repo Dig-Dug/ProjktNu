@@ -9,7 +9,6 @@
 		for (let i = 0; i < ran; i++) {
 			f.push(ran * i);
 		}
-		return;
 	}
 
 	function changeColor2() {
@@ -21,15 +20,14 @@
 		document.getElementById('hor2').style.backgroundColor = l;
 	}
 	function rem() {
-		if (f) {
-			for (let i = 0; i < f.length; i++) {
-				f = f.slice(1, -1);
+		f = f.slice(1, -1);
 
-				console.log(f);
-				return;
-			}
+		console.log(f);
+		changeColor2();
+		if (f.length == 0) {
+			r = false;
+			ran = Math.floor(Math.random() * 10) + 3;
 		}
-		//f = [0];
 	}
 </script>
 
@@ -41,10 +39,7 @@
 	<a href="/">back</a>
 	<br />
 	{#if r}
-		{#each f as fs}
-			<!--<div class="hor" id="hor2">w {ran}</div>-->
-			<div class="hor" bind:this={ran}>{f}</div>
-		{/each}
+		<div class="hor" id="hor2">{f}</div>
 	{/if}
 </div>
 
@@ -55,12 +50,20 @@
 		background-color: rgba(220, 20, 60, 0.486);
 		height: 23px;
 	}
+	#hor2 {
+		margin-right: 90px;
+	}
 	#con {
 		position: absolute;
 		left: 20px;
 		top: 20%;
 	}
 	.hor {
+		font-family: fantasy;
+		color: crimson;
+		position: relative;
+		top: 20px;
+		letter-spacing: 0.9em;
 		display: inline;
 		background-color: i;
 	}
