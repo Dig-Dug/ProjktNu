@@ -29,12 +29,32 @@
 			ran = Math.floor(Math.random() * 10) + 3;
 		}
 	}
+
+	function rev() {
+		console.log('eee');
+		let z = [];
+		z = ('' + f).split('').map(Number).reverse();
+		console.log(z);
+		return z;
+		/**function digitize(n) {
+					n = 121313414;
+			let nu = [];
+
+let m = (""+n).split("").map(Number);
+let r = m.reverse()
+return r
+  //console.log(r)
+
+  let digitize = (n) => { return (""+n).split("").map(Number).reverse(); }
+}*/
+	}
 </script>
 
 <div id="con">
 	<p>remove first and last element of array</p>
 	<button class="bu" on:click={gen}>elements generator</button>
 	<button class="bu" on:click={rem}>remove first & last element</button>
+	<button class="bu" on:click={rev}>reverse elements</button>
 	<br />
 	<a href="/">back</a>
 	<br />
