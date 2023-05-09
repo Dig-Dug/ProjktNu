@@ -3,11 +3,13 @@
 
 	let f = [ran];
 	let r = false;
-
+	//	let emoji = ['😂', '😝', '⚾', '👽', '💘', '🍓', '🚽', '😘'];
+	let en = [];
 	function gen() {
 		r = true;
 		for (let i = 0; i < ran; i++) {
 			f.push(ran * i);
+			//			en.push(emoji);
 		}
 	}
 
@@ -36,18 +38,25 @@
 		f = r;
 		return r;
 	}
+	function remRepeat() {
+		let unique = [...new Set(f)];
+		console.log(unique);
+		return unique;
+	}
 </script>
 
 <div id="con">
 	<p>remove first and last element of array</p>
 	<button class="bu" on:click={gen}>elements generator</button>
 	<button class="bu" on:click={rem}>remove first & last element</button>
+	<button class="bu" on:click={remRepeat}>remove repeated elements</button>
 	<button class="bu" on:click={rev}>reverse elements</button>
 	<br />
 	<a href="/">back</a>
 	<br />
 	{#if r}
 		<div class="hor" id="hor2">{f}</div>
+		<!-- <div class="hor" id="hor2">{en}</div> -->
 	{/if}
 </div>
 
