@@ -31,22 +31,10 @@
 	}
 
 	function rev() {
-		console.log('eee');
-		let z = [];
-		z = ('' + f).split('').map(Number).reverse();
-		console.log(z);
-		return z;
-		/**function digitize(n) {
-					n = 121313414;
-			let nu = [];
-
-let m = (""+n).split("").map(Number);
-let r = m.reverse()
-return r
-  //console.log(r)
-
-  let digitize = (n) => { return (""+n).split("").map(Number).reverse(); }
-}*/
+		let r = f.reverse();
+		console.log(r);
+		f = r;
+		return r;
 	}
 </script>
 
