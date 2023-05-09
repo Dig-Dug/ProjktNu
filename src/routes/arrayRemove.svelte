@@ -50,7 +50,7 @@
 	<button class="bu" on:click={gen}>elements generator</button>
 	<button class="bu" on:click={rem}>remove first & last element</button>
 	<button class="bu" on:click={remRepeat}>remove repeated elements</button>
-	<button class="bu" on:click={rev}> reverse elements</button>
+	<button class="bu" on:click={rev}>reverse elements</button>
 	<br />
 	<a href="/">back</a>
 	<br />
