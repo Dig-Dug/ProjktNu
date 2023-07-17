@@ -1,4 +1,5 @@
 npm run dev
-
+https://getemoji.com/assets/#activities  <-- Emojis
+https://svelte-atoms.web.app/IconButton  <-- Icons
 git remote add origin https://github.com/Dig-Dug/ProjktNu.git
 git push --set-upstream origin master
