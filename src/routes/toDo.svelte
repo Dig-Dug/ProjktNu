@@ -1,15 +1,15 @@
 <script>
 	import { beforeUpdate, afterUpdate } from 'svelte';
 	let message = '';
-
+	let inputField = '';
+	let newFieldValue = '';
 	let open = false;
-	function display() {
-		//https://bobbyhadz.com/blog/javascript-clear-input-field-after-submit
+	let a = [];
 
-		open = true;
+	//https://bobbyhadz.com/blog/javascript-clear-input-field-after-submit
 
-		return;
-	}
+	//a.push(newFieldValue);
+
 	function deleteThis() {
 		message = '';
 		open = false;
@@ -17,6 +17,20 @@
 
 	let src = 'easter.jpg';
 	let pic = true;
+	let newM = '';
+	const onInput = (event) => {
+		if (event.key !== 'Enter') return;
+		console.log(newFieldValue);
+		//a.push(inputField);
+		inputField.value = '';
+		//display();
+		open = true;
+
+		//return;
+	};
+	function lol() {
+		console.log('Eeeeee');
+	}
 </script>
 
 r
@@ -26,23 +40,33 @@ r
 <h1>To-Do List 🗿</h1>
 <img class:pic {src} alt="w" />
 <div class="au">
-	<textarea name="" id="" cols="33" rows="1" bind:value={message} />
-	<button on:click={display}>submit</button>
-	<br />
+	<input
+		name="inputField1"
+		type="text"
+		placeholder="type"
+		bind:this={inputField}
+		on:keydown={onInput}
+		bind:value={newFieldValue}
+	/>
 
 	<div class="con" />
 
 	<br />
 </div>
+<!-- {#each newFieldValue as i}
+			<p>{newFieldValue}</p>
+		{/each} -->
 {#if open}
 	<div class="layer">
-		{message}
-		{@html message}
+		<p>{newFieldValue}</p>
+		{#each a as i}
+			<p>{inputField}</p>
+		{/each}
 		<input type="checkbox" />
 		<p style="cursor: pointer;" on:click={deleteThis}>🩻</p>
 	</div>
 {/if}
-<a class="s" href="/">back</a>
+<a class="s" href="/" style="color: red;">back</a>
 
 <style>
 	.au,
