@@ -1,36 +1,34 @@
 <script>
 	import { beforeUpdate, afterUpdate } from 'svelte';
-	let message = '';
-	let inputField = '';
-	let newFieldValue = '';
-	let open = false;
-	let a = [];
+	import List from './todos/list.svelte';
+	import a from './todos/list.svelte';
+	let b = [];
+	export let open = false;
+
+	export let inputField = '';
+	export let newFieldValue = '';
 
 	//https://bobbyhadz.com/blog/javascript-clear-input-field-after-submit
-
+	let p = () => {
+		b.push(newFieldValue);
+		b.push(a);
+		console.log(b);
+	};
 	//a.push(newFieldValue);
-
-	function deleteThis() {
-		message = '';
-		open = false;
-	}
-
-	let src = 'easter.jpg';
-	let pic = true;
-	let newM = '';
-	const onInput = (event) => {
+	let onInput = (event) => {
 		if (event.key !== 'Enter') return;
-		console.log(newFieldValue);
+
 		//a.push(inputField);
 		inputField.value = '';
 		//display();
 		open = true;
-
-		//return;
+		//a.push(inputField);
+		p();
+		console.log(newFieldValue);
+		return;
 	};
-	function lol() {
-		console.log('Eeeeee');
-	}
+	let src = 'easter.jpg';
+	let pic = true;
 </script>
 
 r
@@ -53,19 +51,12 @@ r
 
 	<br />
 </div>
+
 <!-- {#each newFieldValue as i}
 			<p>{newFieldValue}</p>
 		{/each} -->
-{#if open}
-	<div class="layer">
-		<p>{newFieldValue}</p>
-		{#each a as i}
-			<p>{inputField}</p>
-		{/each}
-		<input type="checkbox" />
-		<p style="cursor: pointer;" on:click={deleteThis}>🩻</p>
-	</div>
-{/if}
+{#if open}<List a={newFieldValue} />{/if}
+
 <a class="s" href="/" style="color: red;">back</a>
 
 <style>
@@ -80,13 +71,6 @@ r
 		justify-content: center;
 		align-items: center;
 		background-color: darkorange;
-	}
-	.layer {
-		width: 120px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background-color: aqua;
 	}
 	.pic {
 		height: 1114px;
