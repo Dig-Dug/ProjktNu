@@ -1,13 +1,8 @@
 <script>
-	let b = [{ text: 'oo', status: true }];
-
-	//export let open = false;
+	let b = [{ text: '', status: true }];
 	let open = false;
-
 	let inputField = '';
 	let newFieldValue = '';
-	//export let newFieldValue = '';
-
 	//https://bobbyhadz.com/blog/javascript-clear-input-field-after-submit
 	let p = () => {
 		//b.push(newFieldValue);
@@ -15,21 +10,14 @@
 		//b = [...b, newFieldValue];
 		b = [...b, { text: newFieldValue, status: false }];
 		newFieldValue = '';
-
-		//console.log(b, '<<<<<');
 	};
 	//a.push(newFieldValue);
 	let onInput = (event) => {
 		if (event.key !== 'Enter') return;
-
-		//a.push(inputField);
 		inputField.value = '';
-		//display();
 		open = true;
-		//a.push(inputField);
 		p();
 		console.log(newFieldValue);
-		//return;
 	};
 	function deleteThis(index) {
 		b.splice(index, 1);
@@ -53,7 +41,7 @@ r
 		bind:this={inputField}
 		on:keydown={onInput}
 		bind:value={newFieldValue}
-	/>
+	/><a class="s" href="/" style="color: red; margin-left:23px">back</a>
 
 	<div class="con" />
 
@@ -68,16 +56,16 @@ r
 {#if open}
 	<!-- <div class="layer"> -->
 	{#each b as item, index}
-		<h1 style="cursor: pointer;" class="layer">{item.text}</h1>
-		<span style="cursor: pointer;" on:click={() => deleteThis(index)}>🩻</span>
-		<input type="checkbox" />
+		<div class="layer">
+			<p style="cursor: pointer;">{item.text}</p>
+			<span style="cursor: pointer;" on:click={() => deleteThis(index)}>🩻</span>
+			<input type="checkbox" />
+		</div>
 	{/each}
 
 	<!-- <p style="cursor: pointer;" on:click={deleteThis}>🩻</p> -->
 	<!-- </div> -->
 {/if}
-
-<a class="s" href="/" style="color: red;">back</a>
 
 <style>
 	.au,
@@ -93,6 +81,7 @@ r
 		background-color: darkorange;
 	}
 	.pic {
+		filter: grayscale(100%);
 		height: 1114px;
 		width: 1934px;
 		position: absolute;
@@ -103,8 +92,17 @@ r
 	.layer {
 		width: 120px;
 		display: flex;
-		justify-content: center;
+		position: relative;
+		margin-bottom: 15px;
+		left: 233px;
+		top: 37px;
 		align-items: center;
 		background-color: aqua;
+
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 1fr;
+		grid-column-gap: 0px;
+		grid-row-gap: 0px;
 	}
 </style>
