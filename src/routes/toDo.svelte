@@ -109,7 +109,6 @@ r
 		grid-row-gap: 0px;
 	}
 	.checked {
-		background-color: rgb(255, 230, 0);
-		text-decoration: line-through;
+		background-color: rgb(68 82 106);
 	}
 </style>
