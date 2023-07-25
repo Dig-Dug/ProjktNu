@@ -16,15 +16,17 @@
 		/* 	localStorage.setItem(question, '<--');
 		localStorage.setItem(answer, '<--'); */
 		flashcard = true;
-		console.log(r, '^^^^');
+
+		console.log(re, r, '^^^^');
 		return;
 	}
 	function close() {
 		//	console.log(nope);
 		//open = true;
 		let r = document.getElementById('div1');
-		r.classList.add('hide');
+		//r.classList.add('hide');
 		console.log(open, r);
+		showIt = false;
 	}
 	function hideA() {
 		showIt = false;
@@ -60,14 +62,14 @@
 		/>
 		<button on:click={save}>Save</button>
 
-		<button on:click={close}>Close</button>
+		<button on:click={close}>Close </button>
 
 		<!-- <button>Close {i}</button> -->
 	</div>
 {/if}
 
 {#if flashcard}
-	<div class="dov" on:click={show}>
+	<div style="cursor:pointer;" class="dov" on:click={show}>
 		<p>{question}</p>
 
 		{#if showIt}

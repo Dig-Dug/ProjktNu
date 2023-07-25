@@ -13,7 +13,7 @@
 		b = [...b, { text: newFieldValue, status: false }];
 		newFieldValue = '';
 	};
-	let chan = false;
+
 	//a.push(newFieldValue);
 	let onInput = (event) => {
 		if (event.key !== 'Enter') return;
@@ -59,10 +59,10 @@ r
 {#if open}
 	<!-- <div class="layer"> -->
 	{#each b as item, index}
-		<div class="layer" class:chan>
+		<div class="layer" class:checked={item.status}>
 			<p style="cursor: pointer;">{item.text}</p>
 			<span style="cursor: pointer;" on:click={() => deleteThis(index)}>🩻</span>
-			<input class:chan type="checkbox" on:click={() => (chan = !chan)} />
+			<input bind:checked={item.status} type="checkbox" />
 		</div>
 	{/each}
 
@@ -108,7 +108,8 @@ r
 		grid-column-gap: 0px;
 		grid-row-gap: 0px;
 	}
-	.chan {
+	.checked {
 		background-color: rgb(255, 230, 0);
+		text-decoration: line-through;
 	}
 </style>
