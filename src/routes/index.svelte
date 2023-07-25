@@ -39,6 +39,7 @@
 		<div><a href="/flashcard">Flashcards</a></div>
 		<div><a href="/arrayRemove">Playing with Arrays [👽]</a></div>
 		<div><a href="/toDo">To-do List 🎮</a></div>
+		<div><a href="/stycky">Sticky Notes 🐙</a></div>
 	</div>
 </section>
 
