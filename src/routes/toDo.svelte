@@ -1,23 +1,13 @@
 <script>
-	// @ts-nocheck
-
-	import { check_outros } from 'svelte/internal';
-
-	let b = [{ text: '', status: true }];
+	let b = [];
 	let open = false;
 	let inputField = '';
 	let newFieldValue = '';
 	//https://bobbyhadz.com/blog/javascript-clear-input-field-after-submit
 	let p = () => {
-		//b.push(newFieldValue);
-		//b.push(a);
-		//b = [...b, newFieldValue];
 		b = [...b, { text: newFieldValue, status: false }];
 		newFieldValue = '';
 	};
-
-	//a.push(newFieldValue);
-	// @ts-ignore
 	let onInput = (event) => {
 		if (event.key !== 'Enter') return;
 		inputField.value = '';
@@ -54,13 +44,7 @@ r
 	<br />
 </div>
 
-<!-- {#each newFieldValue as i}
-			<p>{newFieldValue}</p>
-		{/each} -->
-<!-- {#if open}<List a={newFieldValue} />{/if} -->
-<!-- <p>{b.join(' + ')}zuiz</p> -->
 {#if open}
-	<!-- <div class="layer"> -->
 	{#each b as item, index}
 		<div class="layer" class:checked={item.status}>
 			<p style="cursor: pointer;">{item.text}</p>
@@ -68,9 +52,6 @@ r
 			<input bind:checked={item.status} type="checkbox" />
 		</div>
 	{/each}
-
-	<!-- <p style="cursor: pointer;" on:click={deleteThis}>🩻</p> -->
-	<!-- </div> -->
 {/if}
 
 <style>
