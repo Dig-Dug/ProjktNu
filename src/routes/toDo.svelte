@@ -1,4 +1,6 @@
 <script>
+	// @ts-nocheck
+
 	import { check_outros } from 'svelte/internal';
 
 	let b = [{ text: '', status: true }];
@@ -15,6 +17,7 @@
 	};
 
 	//a.push(newFieldValue);
+	// @ts-ignore
 	let onInput = (event) => {
 		if (event.key !== 'Enter') return;
 		inputField.value = '';
