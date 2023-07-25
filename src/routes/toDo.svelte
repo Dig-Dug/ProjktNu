@@ -1,4 +1,6 @@
 <script>
+	import { check_outros } from 'svelte/internal';
+
 	let b = [{ text: '', status: true }];
 	let open = false;
 	let inputField = '';
@@ -11,6 +13,7 @@
 		b = [...b, { text: newFieldValue, status: false }];
 		newFieldValue = '';
 	};
+	let chan = false;
 	//a.push(newFieldValue);
 	let onInput = (event) => {
 		if (event.key !== 'Enter') return;
@@ -56,10 +59,10 @@ r
 {#if open}
 	<!-- <div class="layer"> -->
 	{#each b as item, index}
-		<div class="layer">
+		<div class="layer" class:chan>
 			<p style="cursor: pointer;">{item.text}</p>
 			<span style="cursor: pointer;" on:click={() => deleteThis(index)}>🩻</span>
-			<input type="checkbox" />
+			<input class:chan type="checkbox" on:click={() => (chan = !chan)} />
 		</div>
 	{/each}
 
@@ -104,5 +107,8 @@ r
 		grid-template-rows: 1fr;
 		grid-column-gap: 0px;
 		grid-row-gap: 0px;
+	}
+	.chan {
+		background-color: rgb(255, 230, 0);
 	}
 </style>
