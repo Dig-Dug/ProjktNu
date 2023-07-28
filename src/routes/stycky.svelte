@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
 
 	// @ts-nocheck
@@ -26,6 +26,9 @@
 		r.addEventListener('click', function onClick(e) {
 			e.target.style.backgroundColor = l;
 		}); */
+		/* const de = document.getElementById('dov');
+		let rotate = 'rotate';
+		de.style.transform = rotate + '(' + l + 'deg)'; */
 		return l;
 	}
 
@@ -40,7 +43,7 @@
 <h1>Sticky Notes 🐙</h1>
 <!-- <button on:click={addIt}>Add sticky note</button>  -->
 <button>Add sticky note</button>
-<a class="s" href="/" style="color: red; margin-left:23px">back</a>
+
 <textarea
 	placeholder="note..."
 	name="areaT"
@@ -50,12 +53,15 @@
 	on:keypress={process}
 	bind:value={content}
 />
+<a class="s" href="/" style="color: red; margin-left:23px; margin-right:23px">back</a>
 <!-- {#if open} -->
-{#each note as i}
-	<div id="dov" class="note" class:checked={i.content}>
-		<p style="color: black;">{i.text}</p>
-	</div>
-{/each}
+<div class="con">
+	{#each note as i}
+		<div id="dov" class="note" class:checked={i.content}>
+			<p style="color: black;">{i.text}</p>
+		</div>
+	{/each}
+</div>
 
 <!-- {/if} -->
 <style>
@@ -64,11 +70,33 @@
 		position: fixed;
 		width: 176px;
 		height: 176px;
+		opacity: 0.5;
+		font-weight: bold;
+		border: 2px solid #ccc;
+		border-radius: 4px;
+		background-color: #ffffff;
+		font-size: 16px;
+		resize: none;
+		margin-top: 33px;
 	}
 	.note {
 		background-color: deeppink;
+		/* transform: rotate(351deg); */
 	}
 	#dov {
 		color: red;
+	}
+	.con {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+		gap: 7px 7px;
+		grid-template-areas:
+			'. . .'
+			'. . .'
+			'. . .';
+
+		width: 361px;
+		height: 211px;
 	}
 </style>
