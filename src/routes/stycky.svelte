@@ -1,38 +1,7 @@
 <script lang="ts">
-	function addIt() {
-		note = [...note, { text: content, status: false }];
-		content = '';
-		//console.log(note);
-
-		/* let i = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
-		let ii = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
-		let iii = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
-		let rgb = 'rgb';
-		let l = rgb + '(' + (i + ' ' + ii + ' ' + iii) + ')';
- */
-
-		/* let r = document.getElementById('dov');
-		r.addEventListener('click', function onClick(e) {
-			e.target.style.backgroundColor = l;
-		}); */
-		/* const de = document.getElementById('dov');
-		let rotate = 'rotate';
-		de.style.transform = rotate + '(' + l + 'deg)'; */
-
-		/* 		let x = document.getElementById('dov');
-		let r = Math.round(Math.random(255) * 255);
-		let g = Math.round(Math.random(255) * 255);
-		let b = Math.round(Math.random(255) * 255);
-		let ranCol = `rgb(${r}, ${g}, ${b})`;
-		x.style.backgroundColor = ranCol;
-		x.style.transform = 'rotate(' + r + 'deg)';
-		x++;
-
-		//return l;
-		return x; */
-	}
 	let open = false;
 	let content = '';
+	let rr = '🐙';
 	let i = 0;
 	let note = [];
 
@@ -40,10 +9,10 @@
 		open = true;
 		let code = e.keyCode ? e.keyCode : e.which;
 		if (code == 13) {
-			//addIt();
-			note = [...note, { text: content, status: false }];
+			note = [...note, { text: content + rr, status: false }];
 			content = '';
 			let x = document.getElementById('dov');
+			let newId = document.getElementById('dov');
 			let r = Math.round(Math.random(255) * 255);
 			let g = Math.round(Math.random(255) * 255);
 			let b = Math.round(Math.random(255) * 255);
@@ -51,17 +20,22 @@
 			x.style.backgroundColor = ranCol;
 			x.style.transform = 'rotate(' + r + 'deg)';
 			note[i++];
-			//return l;
+			upId();
+			return x;
 		}
+	}
+	function upId(x) {
+		let k = document.getElementById('dov');
+		let newOd = k.value;
+		k.id = newOd;
 	}
 </script>
 
 <h1>Sticky Notes 🐙</h1>
-<!-- <button on:click={addIt}>Add sticky note</button>  -->
-<button>Add sticky note</button>
-
+<br />
+<a class="s" href="/" style="color: red;">back</a>
 <textarea
-	placeholder="note..."
+	placeholder="write that note...🐙"
 	name="areaT"
 	id=""
 	cols="30"
@@ -69,8 +43,7 @@
 	on:keypress={process}
 	bind:value={content}
 />
-<a class="s" href="/" style="color: red; margin-left:23px; margin-right:23px">back</a>
-<!-- {#if open} -->
+
 <div class="con">
 	{#each note as i}
 		<div id="dov" class="note" class:checked={i.content}>
@@ -79,8 +52,13 @@
 	{/each}
 </div>
 
-<!-- {/if} -->
 <style>
+	a {
+		margin: 0;
+		position: absolute;
+		top: 10%;
+		left: 50%;
+	}
 	textarea {
 		resize: none;
 		position: fixed;
@@ -89,25 +67,25 @@
 		opacity: 0.5;
 		font-weight: bold;
 		border: 2px solid #ccc;
-		border-radius: 4px;
+		border-radius: 8px;
 		background-color: #ffffff;
 		font-size: 16px;
 		resize: none;
-		margin-top: 33px;
+		left: 145px;
 	}
 	.note {
 		background-color: deeppink;
+		border-radius: 8px;
 		/* transform: rotate(351deg); */
 	}
 	#dov {
 		color: red;
 	}
-	.foo {
-		background-color: yellow;
-	}
 	.con {
+		margin-top: 54px;
+		margin-left: 352px;
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
 		grid-template-rows: 1fr 1fr 1fr;
 		gap: 7px 7px;
 		grid-template-areas:

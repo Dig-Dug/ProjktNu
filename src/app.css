@@ -25,12 +25,10 @@ body {
 	min-height: 100vh;
 	margin: 0;
 	background-color: var(--primary-color);
-	background: linear-gradient(
-		180deg,
-		var(--primary-color) 0%,
-		var(--secondary-color) 10.45%,
-		var(--tertiary-color) 41.35%
-	);
+	background: linear-gradient(180deg,
+			var(--primary-color) 0%,
+			var(--secondary-color) 10.45%,
+			var(--tertiary-color) 41.35%);
 }
 
 body::before {
@@ -41,12 +39,11 @@ body::before {
 	top: 0;
 	left: 10vw;
 	z-index: -1;
-	background: radial-gradient(
-		50% 50% at 50% 50%,
-		var(--pure-white) 0%,
-		rgba(255, 255, 255, 0) 100%
-	);
-	opacity: 0.05;cursor: pointer;
+	background: radial-gradient(50% 50% at 50% 50%,
+			var(--pure-white) 0%,
+			rgba(255, 255, 255, 0) 100%);
+	opacity: 0.05;
+	cursor: pointer;
 }
 
 #svelte {
@@ -55,18 +52,24 @@ body::before {
 	flex-direction: column;
 }
 
-h1 {font-family: 'Roboto Slab', serif;}
+h1 {
+	font-family: 'Roboto Slab', serif;
+}
+
 h2,
-p {font-family: 'Roboto', sans-serif;
+p {
+	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
 	/* color: var(--heading-color); */
 }
 
-p {font-family: 'Rokkitt', serif;
-	
+p {
+	font-family: 'Rokkitt', serif;
+
 }
 
-a { font-family: 'Rokkitt', serif;
+a {
+	font-family: 'Rokkitt', serif;
 	color: var(--accent-color);
 	text-decoration: none;
 	cursor: pointer;
@@ -97,15 +100,17 @@ pre {
 }
 
 input,
-button {font-family: 'Nunito', sans-serif;
+button {
+	font-family: 'Nunito', sans-serif;
 	cursor: pointer;
 	font-size: inherit;
-	
+
 }
 
 button:focus:not(:focus-visible) {
 	outline: none;
 }
+
 /* @font-face {
     font-family: 'Nautilus';
     src:local('Nautilus'), url("../static/fonts/Nautilus.otf") format('truetype');
