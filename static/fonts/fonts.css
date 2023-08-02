@@ -1,4 +1,14 @@
-@font-face{
-    font-family: 'yyy';
-    src:local(''), url('/static/fonts/AlexBrush-Regular.ttf') format('truetype');
-  }
+@font-face {
+  font-family: 'yyy';
+  src: local(''), url('/static/fonts/AlexBrush-Regular.ttf') format('truetype');
+}
+
+/* @font-face {
+  font-family: 'Pieces';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''), url('/fonts/sh-pinscher.regular.otf');
+ 
+
+
+} */

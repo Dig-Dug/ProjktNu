@@ -1,27 +1,16 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
-	// @ts-nocheck
-
-	let open = false;
-	let content = '';
-	let note = [];
-	/* 	let open = false;
-	let inputField = '';
-	let newFieldValue = '';
-*/
-
 	function addIt() {
-		//		open = true;
 		note = [...note, { text: content, status: false }];
 		content = '';
-		console.log(note);
+		//console.log(note);
 
-		let i = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
+		/* let i = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
 		let ii = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
 		let iii = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
 		let rgb = 'rgb';
 		let l = rgb + '(' + (i + ' ' + ii + ' ' + iii) + ')';
+ */
+
 		/* let r = document.getElementById('dov');
 		r.addEventListener('click', function onClick(e) {
 			e.target.style.backgroundColor = l;
@@ -29,13 +18,40 @@
 		/* const de = document.getElementById('dov');
 		let rotate = 'rotate';
 		de.style.transform = rotate + '(' + l + 'deg)'; */
-		return l;
+
+		/* 		let x = document.getElementById('dov');
+		let r = Math.round(Math.random(255) * 255);
+		let g = Math.round(Math.random(255) * 255);
+		let b = Math.round(Math.random(255) * 255);
+		let ranCol = `rgb(${r}, ${g}, ${b})`;
+		x.style.backgroundColor = ranCol;
+		x.style.transform = 'rotate(' + r + 'deg)';
+		x++;
+
+		//return l;
+		return x; */
 	}
+	let open = false;
+	let content = '';
+	let i = 0;
+	let note = [];
 
 	function process(e) {
+		open = true;
 		let code = e.keyCode ? e.keyCode : e.which;
 		if (code == 13) {
-			addIt();
+			//addIt();
+			note = [...note, { text: content, status: false }];
+			content = '';
+			let x = document.getElementById('dov');
+			let r = Math.round(Math.random(255) * 255);
+			let g = Math.round(Math.random(255) * 255);
+			let b = Math.round(Math.random(255) * 255);
+			let ranCol = `rgb(${r}, ${g}, ${b})`;
+			x.style.backgroundColor = ranCol;
+			x.style.transform = 'rotate(' + r + 'deg)';
+			note[i++];
+			//return l;
 		}
 	}
 </script>
@@ -85,6 +101,9 @@
 	}
 	#dov {
 		color: red;
+	}
+	.foo {
+		background-color: yellow;
 	}
 	.con {
 		display: grid;
