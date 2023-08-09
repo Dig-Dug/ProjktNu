@@ -1,38 +1,28 @@
 <script>
-	import Timer from './todos/timerApp/Timer.svelte';
-	//import {onInterval} from
-
 	/* 	import '../../static/fonts/fonts.css'; */
-	let srt = 'tt.gif';
+	/* let srt = 'tt.gif'; */
 
+	/* 	var minutes = Math.floor(millis / 60000);
+	var seconds = (millis / 10).toFixed(0);
+	var mill = ((millis % 600) / 100).toFixed(0);
+ */
 	let hour = 0.0;
-	let min = 6.0;
-	let sec = 12;
-	let time = [hour];
-
-	let show = false;
-
-	let stop = () => (show = !show);
-	let tick = () => ((hour += 1), (min += 1), (sec += 1));
+	let min = 0.0;
+	let sec = 0.0;
+	function start() {
+		hour += 1;
+		min += 1;
+		sec += 1;
+	}
 </script>
 
 <h1>TO DO the timer</h1>
 <div class="con">
-	<h2 style="display: contents;" id="chrono" class="chrono" on:click={stop}>
-		{show ? 'stop' : 'start'}
-		{hour}{min}{sec}
+	<h2 style="display: contents;" on:click={start} id="chrono" class="chrono">
+		{hour}:
+		{min}:
+		{sec}
 	</h2>
-	<!-- {#each time as i}
-			{i.text}:
-		{/each} -->
-
-	{#if show}
-		<Timer callback={tick} />
-	{/if}
-
-	<!-- 	{min}:
-		{sec} -->
-
 	<!-- <img
 		style="
 width: 173px;
@@ -42,8 +32,6 @@ height: 157px;"
 	/> -->
 </div>
 <a class="s" href="/" style="color: red; margin-left:23px; margin-right:23px">back</a>
-
-<!-- https://svelte.dev/tutorial/ondestroy -->
 
 <style>
 	@font-face {
