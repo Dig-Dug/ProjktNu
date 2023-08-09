@@ -5,23 +5,24 @@
 	/* 	import '../../static/fonts/fonts.css'; */
 	let srt = 'tt.gif';
 
-	let hour = 0.0;
-	let min = 6.0;
-	let sec = 12;
+	let hour = 0;
+	let min = 0;
+	let sec = 0;
 	let time = [hour];
 
 	let show = false;
 
 	let stop = () => (show = !show);
-	let tick = () => ((hour += 1), (min += 1), (sec += 1));
+	let tick = () => (hour += 1);
 </script>
 
 <h1>TO DO the timer</h1>
 <div class="con">
 	<h2 style="display: contents;" id="chrono" class="chrono" on:click={stop}>
 		{show ? 'stop' : 'start'}
-		{hour}{min}{sec}
+		{hour}
 	</h2>
+	<p>{hour}</p>
 	<!-- {#each time as i}
 			{i.text}:
 		{/each} -->
