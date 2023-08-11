@@ -1,5 +1,5 @@
 <script>
-	import { onInterval } from './utils';
+	import { onInterval } from './utils.js';
 
 	export let callback;
 	export let interval = 1000;

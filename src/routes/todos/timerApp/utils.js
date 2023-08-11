@@ -1,15 +1,6 @@
-/* import { readable, derived } from 'svelte/store';
+//https://svelte.dev/tutorial/ondestroy
+
 import { onDestroy } from 'svelte';
-
-export const time = readable(new Date(), function start(set) {
-	const interval = setInterval(() => {
-		set(new Date());
-	}, 1000);
-
-	return function stop() {
-		clearInterval(interval);
-	};
-});
 
 export function onInterval(callback, milliseconds) {
 	const interval = setInterval(callback, milliseconds);
@@ -19,16 +10,8 @@ export function onInterval(callback, milliseconds) {
 	});
 }
 
-const start = new Date();
-
-export const elapsed = derived(time, ($time) => Math.round(($time - start) / 1000));
- */
-//https://svelte.dev/tutorial/ondestroy
-
-import { onDestroy } from 'svelte';
-
-export function onInterval(callback, milliseconds) {
-	const interval = setInterval(callback, milliseconds);
+export function onInterval1(callback1, milliseconds1) {
+	const interval = setInterval(callback1, milliseconds1);
 
 	onDestroy(() => {
 		clearInterval(interval);

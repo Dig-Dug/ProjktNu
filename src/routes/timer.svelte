@@ -1,5 +1,7 @@
 <script>
 	import Timer from './todos/timerApp/Timer.svelte';
+	import Seconds from './todos/timerApp/Seconds.svelte';
+
 	//import {onInterval} from
 
 	/* 	import '../../static/fonts/fonts.css'; */
@@ -10,16 +12,18 @@
 	let sec = 0;
 	let time = [hour];
 
-	let show = true;
+	let show = false;
 
-	let stop = () => (show = !show);
-	let tick = () => ((hour += 1), (min += 2), (sec += 3));
+	let stop = () => ((show = !show), console.log('lüpkf'), tick());
+	let tick = () => ((hour += 1), (min += 2));
+	let tick1 = () => (sec += 1);
 </script>
 
 <h1>TO DO the timer</h1>
 <div class="con">
 	<h2 style="display: contents;" id="chrono" class="chrono" on:click={stop}>
-		<button on:click={stop}>{show ? 'Close' : 'Open'} Timer</button>
+		<button on:click={tick}>Timer</button>
+		<!-- <button on:click={stop}>Seconds</button> -->
 		{show ? 'stop' : 'start'}
 		{hour}: {min} : {sec}
 	</h2>
@@ -30,6 +34,7 @@
 
 	{#if show}
 		<Timer callback={tick} />
+		<Seconds callback1={tick1} />
 	{/if}
 
 	<!-- 	{min}:
