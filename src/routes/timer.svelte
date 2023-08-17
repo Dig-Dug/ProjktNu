@@ -8,8 +8,9 @@
 	let sec = 0;
 
 	let show = false;
+	let she = false;
 
-	let stop = () => ((show = !show), console.log('lüpkf'), tick1());
+	let stop = () => ((show = !show), console.log('lüpkf'), tick1(), (she = false));
 	function tick() {
 		hour += 1;
 		sec -= 60;
@@ -20,6 +21,7 @@
 	}
 
 	function tick1() {
+		she = true;
 		sec += 1;
 		if (sec > 60) {
 			tick();
@@ -32,27 +34,25 @@
 	}
 </script>
 
-<h1>TO DO the timer</h1>
+<h1>the timer ⏰</h1>
+{#if she}
+	<img
+		style="
+width: 173px;
+height: 157px;"
+		src={srt}
+		alt=""
+	/>
+{/if}
 <div class="con">
-	<h2 style="display: contents;" id="chrono" class="chrono" on:click={stop}>
+	<h2 style="display:contents;" id="chrono" class="chrono" on:click={stop}>
 		{show ? 'stop' : 'start'}
-		{min}:{hour}: {sec}
+		{min}:{hour}:{sec}
 	</h2>
 	{#if show}
 		<Timer callback={tick} />
 		<Seconds callback1={tick1} />
-
-		<img
-			style="
-width: 173px;
-height: 157px;"
-			src={srt}
-			alt=""
-		/>
 	{/if}
-
-	<!-- 	{min}:
-		{sec} -->
 </div>
 <a class="s" href="/" style="color: red; margin-left:23px; margin-right:23px">back</a>
 
@@ -61,7 +61,7 @@ height: 157px;"
 	@font-face {
 		font-family: 'Pieces';
 		font-style: normal;
-		font-weight: 500;
+		font-weight: 450;
 		src: local(''), url('/fonts/sh-pinscher.regular.otf');
 		/* IE9 Compat Modes */
 	}
@@ -78,5 +78,6 @@ height: 157px;"
 	}
 	img {
 		position: fixed;
+		right: 600px;
 	}
 </style>
