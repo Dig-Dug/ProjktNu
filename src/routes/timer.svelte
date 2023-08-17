@@ -1,16 +1,11 @@
 <script>
 	import Timer from './todos/timerApp/Timer.svelte';
-	import Seconds from './todos/timerApp/Seconds.svelte';
-
-	//import {onInterval} from
-
-	/* 	import '../../static/fonts/fonts.css'; */
+	import Seconds from './todos/timerApp/MicroSec.svelte';
 	let srt = 'tt.gif';
 
 	let hour = 0.0;
 	let min = 0;
 	let sec = 0;
-	let time = [hour];
 
 	let show = false;
 
@@ -18,31 +13,31 @@
 	function tick() {
 		hour += 1;
 		sec -= 60;
+		if (hour > 60) {
+			tick2();
+			return;
+		}
 	}
-	/* let tick1 = () => ( if(hour > 10){sec += 1}); */
+
 	function tick1() {
 		sec += 1;
 		if (sec > 60) {
 			tick();
 			return;
-			//hour += 1;
 		}
+	}
+	function tick2() {
+		min += 1;
+		hour -= 60;
 	}
 </script>
 
 <h1>TO DO the timer</h1>
 <div class="con">
 	<h2 style="display: contents;" id="chrono" class="chrono" on:click={stop}>
-		<!-- <button on:click={tick}>Timer</button> -->
-		<!-- <button on:click={stop}>Seconds</button> -->
 		{show ? 'stop' : 'start'}
-		{hour}: {sec}
+		{min}:{hour}: {sec}
 	</h2>
-
-	<!-- {#each time as i}
-			{i.text}:
-		{/each} -->
-
 	{#if show}
 		<Timer callback={tick} />
 		<Seconds callback1={tick1} />
