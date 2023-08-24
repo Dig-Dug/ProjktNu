@@ -1,13 +1,33 @@
 <script>
+	import { onMount } from 'svelte';
+
+	onMount(async () => {
+		swapEm();
+		sum();
+		console.log('on');
+	});
 	let num1 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
 	let num2 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
 
 	let res = 0;
+
+	let ans1 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+	let ans2 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+	let options = [ans1, ans2, res];
+	function swapEm() {
+		console.log('adddda');
+		ans1 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+		ans2 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+		return;
+	}
 	function sum() {
+		swapEm();
 		res = num1 + num2;
 		return res;
 	}
 </script>
+
+<svelte:window on:load={sum} />
 
 <h1>Math for kids 🧮</h1>
 <a class="s" href="/" style="color: red; margin-left:23px; margin-right:23px">back</a>
@@ -26,11 +46,14 @@
 		<h2>Divide</h2>
 	</div>
 	<br />
+
+	<!-- 	{#each options as i} -->
 	<div class="options">
-		<p>{num1}</p>
-		<p>{num2}</p>
+		<p>{ans1}</p>
+		<p>{ans2}</p>
 		<p>{res}</p>
 	</div>
+	<!-- {/each} -->
 </div>
 
 <style>

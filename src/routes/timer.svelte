@@ -46,7 +46,7 @@ height: 157px;"
 {/if}
 <div class="con">
 	<h2 style="display:contents;" id="chrono" class="chrono" on:click={stop}>
-		{show ? 'stop' : 'start'}
+		{show ? 'pause' : 'start'}
 		{min}:{hour}:{sec}
 	</h2>
 	{#if show}
