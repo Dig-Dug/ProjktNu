@@ -6,23 +6,31 @@
 		sum();
 		console.log('on');
 	});
-	let num1 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
-	let num2 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+	//@ts-ignore
+	let num1, num2;
 
 	let res = 0;
 
 	let ans1 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
 	let ans2 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
-	let options = [ans1, ans2, res];
+
 	function swapEm() {
 		console.log('adddda');
 		ans1 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
 		ans2 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+
+		num1 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+		num2 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+
 		return;
 	}
+	let options = [ans1, ans2, res];
 	function sum() {
 		swapEm();
 		res = num1 + num2;
+		console.log(options, res);
+
+		options = [res, res, res];
 		return res;
 	}
 </script>
