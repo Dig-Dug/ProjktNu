@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 
 	onMount(async () => {
-		swapEm();
+		//swapEm();
 		sum();
 		console.log('on');
 	});
@@ -24,20 +24,30 @@
 
 		return;
 	}
-	let options = [ans1, ans2, res];
+	//let options = [ans1, ans2, res];
+	//let options = [];
 	function sum() {
 		swapEm();
+		//@ts-ignore
 		res = num1 + num2;
-		console.log(options, res);
 
-		options = [res, res, res];
-		return res;
+		console.log(res);
+		swithEm();
+		return;
+	}
+	let i = 0;
+	function swithEm(min, max) {
+		min = Math.ceil(0);
+		max = Math.floor(3);
+		i = Math.floor(Math.random() * (max - min) + min);
+		console.log(i);
+		return i;
 	}
 </script>
 
 <svelte:window on:load={sum} />
 
-<h1>Math for kids 🧮</h1>
+<h1>Math-- for kids 🧮</h1>
 <a class="s" href="/" style="color: red; margin-left:23px; margin-right:23px">back</a>
 <div class="table">
 	<p>{num1}</p>
@@ -57,9 +67,30 @@
 
 	<!-- 	{#each options as i} -->
 	<div class="options">
-		<p>{ans1}</p>
+		<!-- <p>{ans1}</p>
 		<p>{ans2}</p>
-		<p>{res}</p>
+		<p>{res}</p> -->
+		{#if i == 0}
+			<p>{ans1}</p>
+			<p>{ans2}</p>
+			<p>{res}</p>
+			<p>lolüouuüupiupiupo</p>
+		{/if}
+
+		{#if i == 1}
+			<p>{ans2}</p>
+			<p>{res}</p>
+			<p>{ans1}</p>
+			<p>-------------------</p>
+		{/if}
+
+		{#if i == 2}
+			<p>{res}</p>
+			<p>{ans2}</p>
+			<p>{ans1}</p>
+			<p>🧮🧮🧮🧮🧮🧮🧮🧮🧮🧮🧮🧮🧮</p>
+		{/if}
+		<!-- 		<p>{options}</p> -->
 	</div>
 	<!-- {/each} -->
 </div>
