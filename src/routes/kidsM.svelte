@@ -11,6 +11,9 @@
 
 	let res = 0;
 
+	let sumBool = false;
+	let minusBool = false;
+
 	let ans1 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
 	let ans2 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
 
@@ -33,7 +36,18 @@
 
 		console.log(res);
 		swithEm();
+		sumBool = true;
 		return;
+	}
+	function minus() {
+		swapEm();
+		//@ts-ignore
+		res = num1 - num2;
+
+		console.log(res);
+		//swithEm();
+		minusBool = true;
+		return res;
 	}
 	let i = 0;
 	function swithEm(min, max) {
@@ -51,7 +65,9 @@
 <a class="s" href="/" style="color: red; margin-left:23px; margin-right:23px">back</a>
 <div class="table">
 	<p>{num1}</p>
+
 	<p>+</p>
+
 	<p>{num2}</p>
 	<p>=</p>
 	<p>?</p>
@@ -59,7 +75,7 @@
 <div class="table2">
 	<div class="operation">
 		<h2 on:click={sum}>Add</h2>
-		<h2>Substract</h2>
+		<h2 on:click={minus}>Substract</h2>
 		<h2>Multiply</h2>
 		<h2>Divide</h2>
 	</div>
@@ -73,19 +89,36 @@
 		{#if i == 0}
 			<p>{ans1}</p>
 			<p>{ans2}</p>
-			<p>{res}</p>
+			{#if sumBool == true}
+				<p on:click={sum}>{res}</p>
+			{/if}
+			{#if minusBool == true}
+				<p on:click={minus}>{res}</p>
+			{/if}
 			<p>lolüouuüupiupiupo</p>
 		{/if}
 
 		{#if i == 1}
 			<p>{ans2}</p>
-			<p>{res}</p>
+
+			{#if sumBool == true}
+				<p on:click={sum}>{res}</p>
+			{/if}
+			{#if minusBool == true}
+				<p on:click={minus}>{res}</p>
+			{/if}
+
 			<p>{ans1}</p>
 			<p>-------------------</p>
 		{/if}
 
 		{#if i == 2}
-			<p>{res}</p>
+			{#if sumBool == true}
+				<p on:click={sum}>{res}</p>
+			{/if}
+			{#if minusBool == true}
+				<p on:click={minus}>{res}</p>
+			{/if}
 			<p>{ans2}</p>
 			<p>{ans1}</p>
 			<p>🧮🧮🧮🧮🧮🧮🧮🧮🧮🧮🧮🧮🧮</p>
