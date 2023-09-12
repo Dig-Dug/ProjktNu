@@ -13,6 +13,9 @@
 
 	let sumBool = false;
 	let minusBool = false;
+	let multBool = false;
+	let divBool = false;
+	let sign = '+';
 
 	let ans1 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
 	let ans2 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
@@ -27,6 +30,13 @@
 
 		return;
 	}
+	function swithEm(min, max) {
+		min = Math.ceil(0);
+		max = Math.floor(3);
+		i = Math.floor(Math.random() * (max - min) + min);
+		console.log(i);
+		return i;
+	}
 	//let options = [ans1, ans2, res];
 	//let options = [];
 	function sum() {
@@ -37,7 +47,11 @@
 		console.log(res);
 		swithEm();
 		sumBool = true;
-		return;
+		//OTHER OPERATIONS
+		minusBool = false;
+		multBool = false;
+		divBool = false;
+		return res;
 	}
 	function minus() {
 		swapEm();
@@ -45,18 +59,43 @@
 		res = num1 - num2;
 
 		console.log(res);
-		//swithEm();
+		swithEm();
 		minusBool = true;
+		//OTHER OPERATIONS
+		sumBool = false;
+		multBool = false;
+		divBool = false;
+		return res;
+	}
+	function mult() {
+		swapEm();
+		//@ts-ignore
+		res = num1 * num2;
+
+		console.log(res);
+		swithEm();
+		multBool = true;
+		//OTHER OPERATIONS
+		sumBool = false;
+		minusBool = false;
+		divBool = false;
+		return res;
+	}
+	function div() {
+		swapEm();
+		//@ts-ignore
+		res = num1 / num2;
+
+		console.log(res);
+		swithEm();
+		divBool = true;
+		//OTHER OPERATIONS
+		sumBool = false;
+		multBool = false;
+		minusBool = false;
 		return res;
 	}
 	let i = 0;
-	function swithEm(min, max) {
-		min = Math.ceil(0);
-		max = Math.floor(3);
-		i = Math.floor(Math.random() * (max - min) + min);
-		console.log(i);
-		return i;
-	}
 </script>
 
 <svelte:window on:load={sum} />
@@ -65,8 +104,15 @@
 <a class="s" href="/" style="color: red; margin-left:23px; margin-right:23px">back</a>
 <div class="table">
 	<p>{num1}</p>
-
-	<p>+</p>
+	{#if sumBool == true}
+		<p>{sign}</p>
+	{:else if minusBool == true}
+		<p>{'-'}</p>
+	{:else if multBool == true}
+		<p>{'*'}</p>
+	{:else if divBool == true}
+		<p>{'/'}</p>
+	{/if}
 
 	<p>{num2}</p>
 	<p>=</p>
@@ -76,8 +122,8 @@
 	<div class="operation">
 		<h2 on:click={sum}>Add</h2>
 		<h2 on:click={minus}>Substract</h2>
-		<h2>Multiply</h2>
-		<h2>Divide</h2>
+		<h2 on:click={mult}>Multiply</h2>
+		<h2 on:click={div}>Divide</h2>
 	</div>
 	<br />
 
@@ -91,9 +137,12 @@
 			<p>{ans2}</p>
 			{#if sumBool == true}
 				<p on:click={sum}>{res}</p>
-			{/if}
-			{#if minusBool == true}
+			{:else if minusBool == true}
 				<p on:click={minus}>{res}</p>
+			{:else if multBool == true}
+				<p on:click={mult}>{res}</p>
+			{:else if divBool == true}
+				<p on:click={div}>{res}</p>
 			{/if}
 			<p>lolüouuüupiupiupo</p>
 		{/if}
@@ -103,11 +152,13 @@
 
 			{#if sumBool == true}
 				<p on:click={sum}>{res}</p>
-			{/if}
-			{#if minusBool == true}
+			{:else if minusBool == true}
 				<p on:click={minus}>{res}</p>
+			{:else if multBool == true}
+				<p on:click={mult}>{res}</p>
+			{:else if divBool == true}
+				<p on:click={div}>{res}</p>
 			{/if}
-
 			<p>{ans1}</p>
 			<p>-------------------</p>
 		{/if}
@@ -115,9 +166,12 @@
 		{#if i == 2}
 			{#if sumBool == true}
 				<p on:click={sum}>{res}</p>
-			{/if}
-			{#if minusBool == true}
+			{:else if minusBool == true}
 				<p on:click={minus}>{res}</p>
+			{:else if multBool == true}
+				<p on:click={mult}>{res}</p>
+			{:else if divBool == true}
+				<p on:click={div}>{res}</p>
 			{/if}
 			<p>{ans2}</p>
 			<p>{ans1}</p>
