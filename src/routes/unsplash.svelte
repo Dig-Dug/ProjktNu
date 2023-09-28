@@ -15,8 +15,17 @@
 
 	let rr = false;
 
+	//For Random images
+	let src = '...';
+	let API = 'https://picsum.photos/300';
+	fetch(API).then((res) => res.url);
+	async function loadT() {
+		const res = await fetch(API);
+		src = await res.url;
+	}
+	loadT();
 	//const actually :/
-
+	//For Dogs Images
 	let fetchImage = (async () => {
 		let response = await fetch('https://dog.ceo/api/breeds/image/random');
 
@@ -25,20 +34,26 @@
 
 	function go() {
 		rr = true;
+
+		/* setTimeout(() => {
+			return (rr = false);
+		}, 5000); */
 	}
 </script>
 
 <div class="center">
 	<h1>Unsplash</h1>
-	<input type="" name="search" id="" />
+	<input type="text" name="search" id="" />
 	<!-- <button on:click={go}>go!</button> -->
-	<button on:click={go}>go!</button>
+	<!-- <button on:click={go}>go!</button> -->
+	<button on:click|preventDefault={go}>go!</button>
 	<br />
 	{#if rr}
 		{#await fetchImage}
 			<p>...waiting</p>
 		{:then data}
 			<img src={data.message} alt="Dog image" />
+			<img {src} alt="Dog image" />
 		{:catch error}
 			<p>An error occurred!</p>
 		{/await}
